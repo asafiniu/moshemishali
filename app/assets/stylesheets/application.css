@@ -260,7 +260,7 @@ Subsubheader
     width: 12px;
     height: 0;
     padding-top: 12px;
-    background-image: url(Images/Buttons/pagination.png);
+    background-image: url(<%= asset_path "Buttons/pagination.png" %>);
     background-position: 0 0;
     float: left;
     overflow: hidden;
@@ -287,4 +287,3 @@ Subsubheader
     text-shadow: none;
 }
 /*											VideoContent.css*/
-

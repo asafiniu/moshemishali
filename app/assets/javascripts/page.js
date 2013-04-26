@@ -93,51 +93,6 @@ function setframe(url) {
    var frameHTML = '<iframe style="width: ' + getVidSize().width + 'px;height: ' + getVidSize().height + 'px;" src="' + url + params + '" frameborder="0" allowfullscreen></iframe>';
    elem('frameDisplay').innerHTML = frameHTML;
 }
-//***************************************************  Image handlers **************************************************
-function imgOnClick(imgId) {
-   sendRequest(imgId);
-}
-function imgOnDown(imgId, isMouseDown) {
-   imgSet(imgId, isMouseDown, '_pressed');
-}
-
-function renderImage(id, filename, altText) {
-   return '<img id="' + id + '" width=240 height=240 src="Images/' + ((filename.match('.gif') != null) ? 'Animated/' : '') + fileName + '" alt="' + altText + '" />';
-}
-function loadButtonImages() {
-   var images = ['about', 'resume', 'films', 'commercial', 'musicvideos', 'contact', 'stills'];
-   var width = Math.floor(window.screen.availWidth / images.length);
-   for (var i = 0; i < images.length; i++) {
-       var src = 'http://www.moshemishali.com/Images/Buttons/' + images[i] + '.jpg';
-       var srcPressed = src.replace(images[i], images[i] + '_pressed');
-       pic = new Image(width, width / 4);
-       pic.src = src;
-       pic = new Image(width, width / 4);
-       pic.src = srcPressed;
-   }
-}
-function loadRegularImages() {
-   var images = ['Animated/wait.gif', 'FilmPosters/privaterooms.jpg'];
-   for (var i = 0; i < images.length; i++) {
-       var src = 'http://www.moshemishali.com/Images/' + images[i];
-       pic = new Image(100, 25);
-       pic.src = src;
-   }
-}
-function imgSet(imgId, isSet, appendix) {
-   var img = elem(imgId);
-   if (img) {
-       var src = img.src;
-       var oldImg = lastToken(src, '/');
-       var newImg = (isSet) ? imgId + appendix : imgId;
-       newImg += '.' + lastToken(oldImg, '.');
-       img.src = src.replace(oldImg, newImg);
-   }
-}
-function loadImages() {
-   loadButtonImages();
-   loadRegularImages();
-}
 //***************************************************  Modal Dialog ****************************************************
 function openModal(modal, modalContent, content, width, height) {
    var mdlCntnt = elem(modal).getElementsByTagName('span');
@@ -223,5 +178,3 @@ function animateFade(lastTick, eid) {
        setTimeout("animateFade(" + curTick + ",'" + eid + "')", 33);
    }
 }
-
-alert("page.js")
