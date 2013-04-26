@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Moshemishali</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<!-- Scripts -->
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<!-- APIs -->
+	<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<!-- META Content -->
 	<title>Moshe Mishali - Director of Photography</title>
 	<meta property="og:url" content="http://www.moshemishali.com" />
@@ -13,17 +15,7 @@
 	<meta property="og:title" content="Moshe Mishali - Director of Photography" /> 
 	<meta property="og:description" content="Moshe Mishali's reel - films, commercials and music videos." /> 
 	<meta property="og:image" content="http://www.moshemishali.com/Images/face.jpg" />
-	<!-- CSS Properties -->
-	<!--<link href="Style/MosheMishaliMasterPage.master.css" rel="stylesheet" type="text/css" />-->
-	<!--<link href="Style/ContentPage.css" rel="stylesheet" type="text/css" />-->
-	<!--<link href="Style/modaldbox.css" rel="stylesheet" type="text/css" />-->
-	<!--<link href="Style/VideoContent.css" rel="stylesheet" type="text/css" />-->
-	<!-- Scripts -->
-	<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<!--<script src="Scripts/modaldbox.js" type="text/javascript"></script>-->
-	<!--<script src="Scripts/page.js" type="text/javascript"></script>-->
-	<script type="text/javascript">//OnLoad();</script>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 	<div id="header"><%= render :partial => "layouts/header" %></div>
