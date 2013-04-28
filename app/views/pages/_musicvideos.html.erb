@@ -4,58 +4,26 @@
             <div class="dirbutton" onmouseover="scroll('down');" onmouseout="scroll('stop');">&#8593;</div><br>
             <marquee id="mrq" behaviour="scroll" direction="up" scrollamount="0" height="250" vspace="0">
                 <table>
-                    <tr colspan="2">
-                        <td><img title="Hageveret Ha Rishona - Amsterdam" src="Images/Posters/musicvideos/amsterdam.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/URQDqaOIq6s');" /></td>
-                        <td>
-                            <b>Amsterdam</b><br>
-                            Hageveret Ha Rishona<br>
-                            Director - Adi Yager<br>
-                        </td>
-                    </tr>
-                    <tr colspan="2">
-                        <td><img title="The Black Keys - Too Afraid to Love You" src="Images/Posters/musicvideos/tooafraid.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/Ft_-5kuYY-E');" /></td>
-                        <td>
-                            <b>Too Afraid to Love you</b><br>
-                            Black Keys<br>
-                            Director - Adam bizanski<br>
-                        </td>
-                    </tr>
-                    <tr colspan="2">
-                        <td><img title="Omer Leshem - A Secret Day" src="Images/Posters/musicvideos/secretday.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/eGbItkCl1g4');" /></td>
-                        <td>
-                            <b>A Secret Day</b><br>
-                            Omer Leshem<br>
-                            Director - Asaph Polonsky<br>
-                        </td>
-                    </tr>
+                    <% Video.by_type("music_video").each do |mv| %>
+                        <tr colspan="2">
+                            <td>
+                                <img class="video_thumbnail" typename="<%= mv.typename %>" title="<%= mv.title %>" src="<%= asset_path mv.image_url %>" data_url="<%= mv.url %>" />
+                            </td>
+                            <td>
+                                <b><%= mv.title %></b><br>
+                                <%= raw mv.description.to_s.gsub(";","<br>") %><br>
+                            </td>
+                        </tr>
+                    <% end %>
                 </table>
             </marquee><br><br>
             <div class="dirbutton" onmouseover="scroll('up');" onmouseout="scroll('stop');">&#8595;</div>
         </td>
         <td>
-            <div id="frameDisplay" class="vidframe">
+            <div id="frameDisplay" class="vidframe music_video">
                 <br><br><br><br>
                 Click on the left side of this page to show a video
             </div>
         </td>
     </tr>
 </table>
-
-<!--
-
-"Amsterdam"<br>
-Hageveret Harishona<br>
-Director - Adi Yager<br>
-http://www.youtube-nocookie.com/embed/URQDqaOIq6s
-
-"Too Afraid to Love you"<br>
-Black Keys<br>
-Director - Adam bizanski<br>
-http://www.youtube-nocookie.com/embed/Ft_-5kuYY-E
-
-"A Secret Day"<br>
-Omer Leshem<br>
-Director - Asaph Polonsky<br>
-http://www.youtube-nocookie.com/embed/eGbItkCl1g4
-
--->

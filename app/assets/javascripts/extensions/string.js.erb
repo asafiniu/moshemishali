@@ -1,0 +1,12 @@
+String.prototype.last = function() {
+	if ( !this.length )
+		return "";
+	else
+		return this[this.length-1];
+}
+String.prototype.first = function() {
+	if ( !this.length )
+		return "";
+	else
+		return this[0];
+}

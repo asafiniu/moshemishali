@@ -1,8 +1,15 @@
 #footer {
+	background-image: url(<%= asset_path "bottom.jpg" %>);
+	background-position: top;
+	background-repeat: no-repeat;
 	color: Gray;
-	float: right;
 	text-align: right;
+	position: fixed;
+	bottom: 0;
 	width: 100%;
-	padding-right: 2.5%;
-	background-image: url(<%= asset_path "bottom.jpg" %>)
+	min-height: 128px
+}
+#footer span.footertext {
+	margin-right:45px;
+	cursor: default;
 }

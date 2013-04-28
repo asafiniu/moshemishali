@@ -1,3 +1,9 @@
 $(document).ready(function(e){
-	
+	attachVideoThumbnailEvents();
 });
+attachVideoThumbnailEvents = function() {
+	$(".video_thumbnail").on("click", function(e){
+		var item = $(e.target);
+		$(".vidframe." + item.attr("typename")).html(VideoLoader.Youtube.GetFrameHTML(item.attr("data_url")));
+	});
+}

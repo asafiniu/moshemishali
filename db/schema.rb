@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425154253) do
+ActiveRecord::Schema.define(:version => 20130428174449) do
 
   create_table "videos", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20130425154253) do
     t.string   "url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "typename"
+    t.string   "image_url"
   end
 
 end

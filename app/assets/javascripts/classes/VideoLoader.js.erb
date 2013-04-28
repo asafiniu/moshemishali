@@ -1,0 +1,28 @@
+VideoLoader = (function(){
+	/*
+	 * VideoLoader class (Static)
+	 * Load videos on even format
+	 */
+	 var _videoURI = "";
+	 var _YouTube = {
+	 	frameHTML: function(url) {
+	 		var params = '?modestbranding=1&amp;title=&amp;autohide=1&amp;showinfo=0';
+	 		var frameHTML = '<iframe style="width: ' + _getVideoSize().width + 'px;height: ' + _getVideoSize().height + 'px;" src="' + url + params + '" frameborder="0" allowfullscreen></iframe>';
+	 		return frameHTML;
+	 	}
+	 };
+	 var _getVideoSize = function() {
+	 	var h = parseInt($('#main').height());
+	 	var vidH = Math.floor(((h - (h % 100))));
+	 	var vidW = Math.floor((350 / 219) * vidH);
+	 	return { height: vidH, width: vidW };
+	 };
+
+	 return {
+	 	Youtube: {
+	 		GetFrameHTML: function(url) {
+	 			return _YouTube.frameHTML(url);
+	 		}
+	 	}
+	 }
+	})();

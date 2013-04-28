@@ -4,104 +4,26 @@
             <div class="dirbutton" onmouseover="scroll('down');" onmouseout="scroll('stop');">&#8593;</div><br>
             <marquee id="mrq" behaviour="scroll" direction="up" scrollamount="0" position="50" height="250" vspace="0">
                 <table>
-                    <tr colspan="2">
-                        <td><img title="Maccabi Beer - Sound Check" src="Images/Posters/commercial/maccabi_soundcheck.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/MXsNeMFwrA4');" /></td>
-                        <td>
-                            <b>Maccabi Beer - "Sound Check"</b><br>
-                            with Asaf Avidan<br>
-                            Director - Adam bizanski<br>
-                            2nd Unit cinematography - Eli Aharonson<br>
-                        </td>
-                    </tr>
-                    <tr colspan="2">
-                        <td><img title="Maccabi Home Tour - The SMS" src="Images/Posters/commercial/maccabi_sms.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/vAzjqpfmpBc');" /></td>
-                        <td>
-                            <b>Maccabi Home Tour - "The SMS"</b><br>
-                            with Shlomi Shaban<br>
-                            Director - Adam bizanski<br>
-                        </td>
-                    </tr>
-                    <tr colspan="2">
-                        <td><img title="Maccabi Home Tour - Big Time" src="Images/Posters/commercial/maccabi_bigtime.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/i_s6ErUTvCg');" /></td>
-                        <td>
-                            <b>Maccabi Home Tour - "Big Time"</b><br>
-                            with Shlomi Shaban<br>
-                            Director - Adam bizanski<br>
-                        </td>
-                    </tr>
-                    <tr colspan="2">
-                        <td><img title="Maccabi Home Tour - The Monolog" src="Images/Posters/commercial/maccabi_monolog.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/CiFbEHC0TVc');" /></td>
-                        <td>
-                            <b>Maccabi Home Tour "The Monolog"</b><br>
-                            with Shlomi Shaban<br>
-                            Director - Adam bizanski<br>
-                                
-                        </td>
-                    </tr>
-                    <tr colspan="2">
-                        <td><img title="El Namrod" src="Images/Posters/commercial/elnamroud.jpg" onclick="setframe('http://www.youtube-nocookie.com/embed/DGN_XvqvlTs');" /></td>
-                        <td>
-                            <b>"El Namrod"</b><br>
-                            Directors - Tal Greenberg & Yasmin Shryer<br>
-                            Additional Cinematography - Roee Mandelevitch<br>
-                        </td>
-                    </tr>
+                    <% Video.by_type("commercial").each do |com| %>
+                        <tr colspan="2">
+                            <td>
+                                <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
+                            </td>
+                            <td>
+                                <b><%= com.title %></b><br>
+                                <%= raw com.description.to_s.gsub(";","<br>") %><br>
+                            </td>
+                        </tr>
+                    <% end %>
                 </table>
             </marquee><br><br>
             <div class="dirbutton" onmouseover="scroll('up');" onmouseout="scroll('stop');">&#8595;</div>
         </td>
         <td>
-            <div id="frameDisplay" class="vidframe">
+            <div id="frameDisplay" class="vidframe commercial">
                 <br><br><br><br>
                 Click on the left side of this page to show a video
             </div>
         </td>
     </tr>
 </table>
-
-<!--<div id="slides">
-    <div class="slides_container">
-        <div class="slide">
-            <h1>Slide 1</h1>
-            <div class="caption">
-		        <p>Description 1</p>
-	        </div>
-        </div>
-        <div class="slide">
-            <h1>Slide 2</h1>
-            <div class="caption">
-		        <p>Description 2</p>
-	        </div>
-        </div>
-    </div>
-    <a href="#" class="prev"><img src="Images/Buttons/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-    <a href="#" class="next"><img src="Images/Buttons/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
-</div>-->
-
-<!--
-    <b>Maccabi Beer - "Sound Check"</b><br>
-    with Asaf Avidan<br>
-    Director - Adam bizanski<br>
-    2nd Unit cinematography - Eli Aharonson<br>
-    http://www.youtube-nocookie.com/embed/MXsNeMFwrA4
-
-    <b>Maccabi Home Tour - "The SMS"</b><br>
-    with Shlomi Shaban<br>
-    Director - Adam bizanski<br>
-    http://www.youtube-nocookie.com/embed/vAzjqpfmpBc
-
-    <b>Maccabi Home Tour - "Big Time"</b><br>
-    with Shlomi Shaban<br>
-    Director - Adam bizanski<br>
-    http://www.youtube-nocookie.com/embed/i_s6ErUTvCg
-
-    <b>Maccabi Home Tour "The Monolog"</b><br>
-    with Shlomi Shaban<br>
-    Director - Adam bizanski<br>
-    http://www.youtube-nocookie.com/embed/CiFbEHC0TVc
-
-    <b>"El Namrod"</b><br>
-    Directors - Tal Greenberg & Yasmin Shryer<br>
-    Additional Cinematography - Roee Mandelevitch<br>
-    http://www.youtube-nocookie.com/embed/DGN_XvqvlTs
--->

@@ -11,38 +11,23 @@
  *= require_self
  *= require_tree .
  */
-/*									MosheMishaliMasterPage.css*/
-body
-{
+ /*									MosheMishaliMasterPage.css*/
+ body
+ {
     background-color: #000;
     direction: ltr;
     font-family: Times New Roman;
     font-size: 11pt;
     overflow-x: hidden;
 }
-.header
+#main 
 {
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    background-position: top;
-    background-repeat: no-repeat;
-}
-.main 
-{
-    float:left;
-    padding: 8.5% 1% 1% 1%;
     font-family: Times New Roman;
     font-size: 12pt;
     color: Gray;
-}
-.footer
-{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    background-position: top;
-    background-repeat: no-repeat;
+    background-color: Black;
+    margin: 0 auto;
+    width: 1183px;
 }
 /*									MosheMishaliMasterPage.css*/
 /*											ContentPage.css*/
@@ -80,7 +65,8 @@ Subsubheader
 .buttonmenu
 {
     position: relative;
-    margin: 130px auto auto auto;
+    top: 150px;
+    margin: 0 auto;
 }
 .buttonmenu img
 {
