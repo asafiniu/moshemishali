@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+
+//= require_tree ../javascripts
+//= require_tree ../images
+//= require_tree ../stylesheets

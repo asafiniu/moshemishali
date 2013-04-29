@@ -1,34 +1,34 @@
 class VideosController < ApplicationController
-  # GET /videos
-  # GET /videos.json
-  def index
-    @videos = Video.all
+  # # GET /videos
+  # # GET /videos.json
+  # def index
+  #   @videos = Video.all
 
-    respond_to do |format|
-      format.json { render json: @videos }
-    end
-  end
+  #   respond_to do |format|
+  #     format.json { render json: @videos }
+  #   end
+  # end
 
-  # GET /videos/1
-  # GET /videos/1.json
-  def show
-    response_hash = {}
-    begin
-      @video = Video.find(params[:id]) 
-    rescue Exception => e
-      response_hash[:error] = e.to_s
-    end
+  # # GET /videos/1
+  # # GET /videos/1.json
+  # def show
+  #   response_hash = {}
+  #   begin
+  #     @video = Video.find(params[:id]) 
+  #   rescue Exception => e
+  #     response_hash[:error] = e.to_s
+  #   end
 
-    if !response_hash[:error]
-      response_hash[:video] = @video
-    end
+  #   if !response_hash[:error]
+  #     response_hash[:video] = @video
+  #   end
 
-    respond_to do |format|
-      # format.html #show.html.erb
-      format.html { redirect_to '/videos' }
-      format.json { render json: response_hash } 
-    end
-  end
+  #   respond_to do |format|
+  #     # format.html #show.html.erb
+  #     format.html { redirect_to '/videos' }
+  #     format.json { render json: response_hash } 
+  #   end
+  # end
 
   # # GET /videos/new
   # # GET /videos/new.json

@@ -1,31 +1,6 @@
 function OnLoad() {
  loadImages();
 }
-//***************************************************  Modal Dialog ****************************************************
-function openModal(modal, modalContent, content, width, height) {
- var mdlCntnt = $("#" + modal + " span");
- if (mdlCntnt && mdlCntnt.length > 0) {
-   mdlCntnt[0].innerHTML = content;
-   sm(modal, width, height);
- }
-}
-function openMovieDetailModal(title, details, vidlink, synopsis) {
- var pageHTML = '' +
- '<div id="title" class="mdlTitle">' + title + '</div>' +
- '<div id="description" class="mdlDesc">' + details + '</div>' +
- '<table>' +
- '<tr>' +
- '<td id="vidout" style="vertical-align: top; text-align: justify; width: 560px; height: 315px;padding-right: 10px;">' +
- '<iframe id="vid" width="560" height="315" src="' + vidlink + '?modestbranding=1&amp;title=&amp;autohide=1&amp;showinfo=0&amp;hd=1" frameborder="0"></iframe>' +
- '</td>' +
- '<td class="descCell">' + synopsis + '</td>' +
- '</tr>' +
- '</table>';
- var width = title.match('Martha') ? 970 : 950;
- var height = title.match('Martha') ? 450 : 400;
- openModal('box', 'modalContent', pageHTML, width, height);
- $('#vid') ? $('#vid').style.visibility = "visible" : '';
-}
 //***************************************************  Special FX  ****************************************************
 function scroll(dir, spd) {
  var scrl = $('#mrq');
