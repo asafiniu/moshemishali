@@ -37,7 +37,7 @@ v[:url] =  "http://www.youtube-nocookie.com/embed/DGN_XvqvlTs"
 v[:description]  =  "Directors - Tal Greenberg &amp; Yasmin Shryer;Additional Cinematography - Roee Mandelevitch"
 v[:typename]  =  "commercial"
 v.save
-            
+
 v = Video.new()
 v[:title] =  "Amsterdam"
 v[:image_url] =  "Posters/musicvideos/amsterdam.jpg" 
@@ -60,4 +60,49 @@ v[:image_url] =  "Posters/musicvideos/secretday.jpg"
 v[:description]  =  "Omer Leshem;Director - Asaph Polonsky"
 v[:url] =  "http://www.youtube-nocookie.com/embed/eGbItkCl1g4"
 v[:typename]  =  "music_video"
+v.save
+
+v = Video.new()
+v[:title] ="Paul" 
+v[:image_url] ='Posters/films/paul.jpg'
+v[:description] ='Israel 2011, 26min<br>Director : Adam Bizanski'
+v[:url] ='http://www.youtube-nocookie.com/embed/1xEReh8ygnU',
+v[:synopsis] ='Still in the aftermath of a tough break up, Paul\'s life is slowly deteriorating. A mindless burglary of his rented apartment forces him to to push through the underworld of Tel Avivto investigate.<br><br><b>Haifa International Film Festival</b> - 2011' 
+v[:typename] ="film"
+v.save
+
+v = Video.new()
+v[:title] ="Martha Must Fly" 
+v[:image_url] ='Posters/films/martha.jpg' 
+v[:description] ='Israel 2011, 26min<br>Director : Ma\'ayan Rypp<br>'
+v[:url] ='http://www.youtube-nocookie.com/embed/Kjc4ooThuO8'
+v[:synopsis] ='Martha is a foreign worker employed as a caretaker of sick old woman who refuses to die. Martha\'s only moments of freedom come when she delves into her imaginary world. Feeling trapped and lonely, Martha tries to free herself but the authorities make it clear to her that until the old woman dies she must stay. She decides to fight for her freedom but reality pushes her into her fantasy world, one last time.<br><br><b>Cannes - Cinefoundation</b> - official selection 2011<br><b>Jerusalem International Film Festival</b> - Israeli Short Film Competition 2011<br><b>Cyprus International Short Film Festival</b> - 2011 - Received Special Mention for Best Actress and Official Students Choice.<br><b>Rehovot Women\'s Film Festival</b> - nominated for Best Drama and winner of most Promising Director<br><b>Lodz 18th International Film and TV Schools\' Festival \'MEDIASCHOOL 2011\'</b><br><b>International Student and Video Festival of Beijing Film Academy</b> - 2011<br><b>New Taipei City Film Festival</b> - Panorama Program, 2011'
+v[:typename] ="film"
+v.save
+
+v = Video.new()
+v[:title] ="In Bed at 10pm" 
+v[:image_url] ='Posters/films/bed.jpg' 
+v[:description] ='Israel 2010, 15min<br>Director : Asaph Polonsky'
+v[:url] ='http://www.youtube-nocookie.com/embed/AwgqgWsyax8'
+v[:synopsis] ='Rachel is a librarian; she knows all about how language works. When her lover\'s mobile phone rings twice during a sleep over in her flat, he informs her of its meaning. His wife needs him, it is urgent and overrides their arrangement that he keep a mistress. At 70, how will Rachel find a love deeper than Motti\'s and move from mistress to top billing? She must act. With the help of a younger colleague, she \"tweaks\" her internet profile and begins the dispiriting process of dating. Disappointment is everywhere, just as it is for younger wannabe lovers. It\'s not so much a moral dilemma as a literary one.<br><br><b>CFC - Toronto International Film Festival</b> - 2011<br><b>MIFF - Milano International Film Festival</b> - 2011<br><b>L.A. Shorts Fest</b> - 2011<br><b>Jerusalm International Film Festival</b> - 2010'
+v[:typename] ="film"
+v.save
+
+v = Video.new()
+v[:title] ="Private Rooms" 
+v[:image_url] ='Posters/films/privaterooms.jpg'
+v[:description] =''
+v[:url] =''
+v[:synopsis] =''
+v[:typename] ="film"
+v.save
+
+v = Video.new()
+v[:title] ="Zipper"
+v[:image_url] ='Posters/films/zipper.jpg'
+v[:description] ='Israel 2008, 34min<br>Director : Asaph Polonsky'
+v[:url] ='http://www.youtube-nocookie.com/embed/g84VOBqisaQ'
+v[:synopsis] ='Surrounded by fake landscapes formed by jigsaw puzzles and being dependent upon high dosage of tranquilizers, the fragile reality that Yaki has built for himself during his compulsory solitude will shatter in face of the complex relationship that would ensue with the stranger invading his house - and life.<br><br><b>Mexico Film Festival 2010</b> - Silver Palm Award Winner<br><b>Jerusalem International Film Festival</b> - 2009<br><b>Akbank Short Film Festival</b> - 2008<br><b>Miami Short Film Festival</b> - 2008<br><b>Boston Jewish Film Festival</b> - 2009<br><b>Real to Reel Film Festival</b> - 2009<br><b>Glimmer: the 7th Hull International Film Festival</b> - 2009'
+v[:typename] ="film"
 v.save

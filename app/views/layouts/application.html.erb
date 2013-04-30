@@ -3,13 +3,8 @@
 <head>
 	<!-- Scripts -->
 	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
 	<%= javascript_include_tag "application" %>
-	<!-- APIs -->
-	<!--<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>-->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript">
-        <%= render :file => "../assets/async/videobox", :formats => [:js] %>
-	</script>
 	<!-- META Content -->
 	<title>Moshe Mishali - Director of Photography</title>
 	<meta property="og:url" content="http://www.moshemishali.com" />
@@ -24,5 +19,10 @@
 	<div id="header"><%= render :partial => "layouts/header" %></div>
 	<div id="main"><%= yield %></div>
 	<div id="footer"><%= render :partial => "layouts/footer" %></div>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.4"></script>
+	<script type="text/javascript">
+	<%= render :file => "../assets/async/videobox", :formats => [:js] %>
+	</script>
 </body>
 </html>

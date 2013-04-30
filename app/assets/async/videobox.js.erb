@@ -8,15 +8,15 @@ showMovieDetails = function(title, description, vidlink, synopsis) {
   var width = title.match('Martha') ? 970 : 950;
   var height = title.match('Martha') ? 450 : 400;
 
-  $.fancybox.open({
-    width: width,
-    height: height,
-    type: 'html',
-    openEffect: 'fade',
-    content: unescape(html),
-    afterShow: function () {
-      $(".fancybox-inner").css("max-height", window.screen.availHeight - 175);
-      this.minHeight = $(this.content).css("height");
-    }
-  });
+  // $.fancybox.open({
+  //   width: width,
+  //   height: height,
+  //   type: 'html',
+  //   openEffect: 'fade',
+  //   content: unescape(html),
+  //   afterShow: function () {
+  //     $(".fancybox-inner").css("max-height", window.screen.availHeight - 175);
+  //     this.minHeight = $(this.content).css("height");
+  //   }
+  // });
 }
