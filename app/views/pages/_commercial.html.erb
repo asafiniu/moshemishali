@@ -5,15 +5,16 @@
             <marquee id="mrq" behaviour="scroll" direction="up" scrollamount="0" position="50" height="250" vspace="0">
                 <table>
                     <% Video.by_type("commercial").each do |com| %>
-                        <tr colspan="2">
-                            <td>
-                                <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
-                            </td>
-                            <td>
-                                <b><%= com.title %></b><br>
-                                <%= raw com.description.to_s.gsub(";","<br>") %><br>
-                            </td>
-                        </tr>
+                    <tr colspan="2">
+                        <td>
+                            <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
+                        </td>
+                        <td>
+                            <b><%= com.title %></b><br>
+                            <%= raw com.description.to_s.gsub(";","<br>") %><br>
+                        </td>
+                    </tr>
+                    
                     <% end %>
                 </table>
             </marquee><br><br>

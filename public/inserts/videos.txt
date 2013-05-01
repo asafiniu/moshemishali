@@ -1,108 +1,179 @@
-v = Video.new();
-v[:title] =  "Maccabi Beer - Sound Check"
-v[:image_url] =  "Posters/commercial/maccabi_soundcheck.jpg" 
-v[:url] =  "http://www.youtube-nocookie.com/embed/MXsNeMFwrA4"
-v[:description]  =  "with Asaf Avidan;Director - Adam bizanski;2nd Unit cinematography - Eli Aharonson"
-v[:typename]  =  "commercial"
+Video.create({
+:title =>  "Maccabi Beer - Sound Check",
+:image_url =>  "Posters/commercial/maccabi_soundcheck.jpg",
+:url =>  "http://www.youtube-nocookie.com/embed/MXsNeMFwrA4",
+:description =>  "with Asaf Avidan;Director - Adam bizanski;2nd Unit cinematography - Eli Aharonson",
+:typename =>  "commercial"	
+})
+
+Video.create({
+:title => "Maccabi Home Tour - The SMS",
+:image_url => "Posters/commercial/maccabi_sms.jpg",
+:url => "http://www.youtube-nocookie.com/embed/vAzjqpfmpBc",
+:description => "with Shlomi Shaban;Director - Adam bizanski",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "Maccabi Home Tour - Big Time",
+:image_url => "Posters/commercial/maccabi_bigtime.jpg",
+:url => "http://www.youtube-nocookie.com/embed/i_s6ErUTvCg",
+:description => "with Shlomi Shaban;Director - Adam bizanski",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "Maccabi Home Tour - The Monolog",
+:image_url => "Posters/commercial/maccabi_monolog.jpg",
+:url => "http://www.youtube-nocookie.com/embed/CiFbEHC0TVc",
+:description => "with Shlomi Shaban;Director - Adam bizanski",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "El Namrod",
+:image_url => "Posters/commercial/elnamroud.jpg",
+:url => "http://www.youtube-nocookie.com/embed/DGN_XvqvlTs",
+:description => "Directors - Tal Greenberg &amp; Yasmin Shryer;Additional Cinematography - Roee Mandelevitch",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "MyCheck",
+:image_url => "Images/Posters/commercial/mycheck.jpg",
+:url => "http://www.youtube-nocookie.com/embed/hcgOdQQonN4",
+:description => "Director - Vania Heymann",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "American Express - The Young Professionals Project",
+:image_url => "Images/Posters/commercial/typ.jpg",
+:url => "http://www.youtube-nocookie.com/embed/uHZo6c0Fvgg",
+:description => "Director - Vania Heymann",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "Pepsi Max",
+:image_url => "Images/Posters/commercial/pepsimax.jpg",
+:url => "http://www.youtube-nocookie.com/embed/gfpW-hKx2Yg",
+:description => "Director - Vania Heymann",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "Soundcheck - Aviv Geffen",
+:image_url => "Images/Posters/commercial/maccabi_avivgeffen.jpg",
+:url => "http://www.youtube-nocookie.com/embed/djr3cIVRGgw",
+:description => "Director - Adam Bizanski",
+:typename => "commercial"
+})
+
+Video.create({
+:title => "Amsterdam",
+:image_url => "Posters/musicvideos/amsterdam.jpg",
+:url => "http://www.youtube-nocookie.com/embed/URQDqaOIq6s",
+:description => "Hageveret Harishona;Director - Adi Yager",
+:typename => "music_video"
+})
+
+Video.create({
+:title => "Too Afraid to Love You",
+:image_url => "Posters/musicvideos/tooafraid.jpg",
+:description => "Black Keys;Director - Adam bizanski",
+:url => "http://www.youtube-nocookie.com/embed/Ft_-5kuYY-E",
+:typename => "music_video"
+})
+
+Video.create({
+:title => "A Secret Day",
+:image_url => "Posters/musicvideos/secretday.jpg",
+:description => "Omer Leshem;Director - Asaph Polonsky",
+:url => "http://www.youtube-nocookie.com/embed/eGbItkCl1g4",
+:typename => "music_video"
+})
+
+Video.create({
+:title => "Halomot Ra&quot;im (Bad Dreams)",
+:image_url => "Posters/musicvideos/baddreams.jpg",
+:description => "Cohen @ Mushon;Director - Gal Muggia",
+:url => "http://www.youtube-nocookie.com/embed/qqZ1HwLMoro",
+:typename => "music_video"
+})
+
+v = Video.new()
+v[:title] = "Paul" 
+v[:image_url] = "Posters/films/paul.jpg"
+v[:description] = "Israel 2011, 26min;Director : Adam Bizanski"
+v[:url] = "http://www.youtube-nocookie.com/embed/1xEReh8ygnU"
+v[:synopsis] = "Still in the aftermath of a tough break up, Paul&quot;s life is slowly deteriorating."
+v[:synopsis] += " A mindless burglary of his rented apartment forces him to to push through the underworld"
+v[:synopsis] += " of Tel Avivto investigate.;;"
+v[:synopsis] += "<b>Haifa International Film Festival</b> - 2011" 
+v[:typename] = "film"
 v.save
 
 v = Video.new()
-v[:title] =  "Maccabi Home Tour - The SMS" 
-v[:image_url] =  "Posters/commercial/maccabi_sms.jpg" 
-v[:url] =  "http://www.youtube-nocookie.com/embed/vAzjqpfmpBc"
-v[:description]  =  "with Shlomi Shaban;Director - Adam bizanski"
-v[:typename]  =  "commercial"
+v[:title] = "Martha Must Fly" 
+v[:image_url] = "Posters/films/martha.jpg" 
+v[:description] = "Israel 2011, 26min;Director : Ma&quot;ayan Rypp;"
+v[:url] = "http://www.youtube-nocookie.com/embed/Kjc4ooThuO8"
+v[:synopsis] = "Martha is a foreign worker employed as a caretaker of sick old woman who refuses to die."
+v[:synopsis] += " Martha&quot;s only moments of freedom come when she delves into her imaginary world."
+v[:synopsis] += " Feeling trapped and lonely, Martha tries to free herself but the authorities make it"
+v[:synopsis] += " clear to her that until the old woman dies she must stay. She decides to fight for her"
+v[:synopsis] += " freedom but reality pushes her into her fantasy world, one last time.;;<b>"
+v[:synopsis] += "Cannes - Cinefoundation</b> - official selection 2011;<b>Jerusalem International Film"
+v[:synopsis] += " Festival</b> - Israeli Short Film Competition 2011;"
+v[:synopsis] += "<b>Cyprus International Short Film Festival</b> - 2011 - Received Special Mention for"
+v[:synopsis] += " Best Actress and Official Students Choice.;"
+v[:synopsis] += "<b>Rehovot Women&quot;s Film Festival</b> - nominated for Best Drama and winner of"
+v[:synopsis] += " most Promising Director;<b>Lodz 18th International Film and TV Schools"
+v[:synopsis] += " Festival &quot;MEDIASCHOOL 2011&quot;</b>;<b>International Student and Video Festival"
+v[:synopsis] += " of Beijing Film Academy</b> - 2011;"
+v[:synopsis] += "<b>New Taipei City Film Festival</b> - Panorama Program, 2011"
+v[:typename] = "film"
 v.save
 
 v = Video.new()
-v[:title] =  "Maccabi Home Tour - Big Time" 
-v[:image_url] =  "Posters/commercial/maccabi_bigtime.jpg" 
-v[:url] =  "http://www.youtube-nocookie.com/embed/i_s6ErUTvCg"
-v[:description]  =  "with Shlomi Shaban;Director - Adam bizanski"
-v[:typename]  =  "commercial"
+v[:title] = "In Bed at 10pm" 
+v[:image_url] = "Posters/films/bed.jpg" 
+v[:description] = "Israel 2010, 15min;Director : Asaph Polonsky"
+v[:url] = "http://www.youtube-nocookie.com/embed/AwgqgWsyax8"
+v[:synopsis] = "Rachel is a librarian; she knows all about how language works."
+v[:synopsis] += " When her lover&quot;s mobile phone rings twice during a sleep over in her flat,"
+v[:synopsis] += " he informs her of its meaning."
+v[:synopsis] += " His wife needs him, it is urgent and overrides their arrangement that he keep a mistress."
+v[:synopsis] += " At 70, how will Rachel find a love deeper than Motti&quot;s and move from mistress to top"
+v[:synopsis] += " billing? She must act."
+v[:synopsis] += " With the help of a younger colleague, she \"tweaks\" her internet profile and begins"
+v[:synopsis] += " the dispiriting process of dating. Disappointment is everywhere, just as it is for"
+v[:synopsis] += " younger wannabe lovers."
+v[:synopsis] += " It&quot;s not so much a moral dilemma as a literary one.;;<b>CFC - Toronto International"
+v[:synopsis] += " Film Festival</b> - 2011;<b>MIFF - Milano International Film Festival</b> - 2011;"
+v[:synopsis] += "<b>L.A. Shorts Fest</b> - 2011;<b>Jerusalm International Film Festival</b> - 2010"
+v[:typename] = "film"
 v.save
 
-v = Video.new()                        
-v[:title] =  "Maccabi Home Tour - The Monolog" 
-v[:image_url] =  "Posters/commercial/maccabi_monolog.jpg" 
-v[:url] =  "http://www.youtube-nocookie.com/embed/CiFbEHC0TVc"
-v[:description]  =  "with Shlomi Shaban;Director - Adam bizanski"
-v[:typename]  =  "commercial"
-v.save
-
-v = Video.new()
-v[:title] =  "El Namrod" 
-v[:image_url] =  "Posters/commercial/elnamroud.jpg" 
-v[:url] =  "http://www.youtube-nocookie.com/embed/DGN_XvqvlTs"
-v[:description]  =  "Directors - Tal Greenberg &amp; Yasmin Shryer;Additional Cinematography - Roee Mandelevitch"
-v[:typename]  =  "commercial"
-v.save
-
-v = Video.new()
-v[:title] =  "Amsterdam"
-v[:image_url] =  "Posters/musicvideos/amsterdam.jpg" 
-v[:url] =  "http://www.youtube-nocookie.com/embed/URQDqaOIq6s"
-v[:description]  =  "Hageveret Harishona;Director - Adi Yager"
-v[:typename]  =  "music_video"
-v.save
+Video.create({
+:title => "Private Rooms",
+:image_url => "Posters/films/privaterooms.jpg",
+:typename => "film"
+})
 
 v = Video.new()
-v[:title] =  "Too Afraid to Love You"
-v[:image_url] =  "Posters/musicvideos/tooafraid.jpg" 
-v[:description]  =  "Black Keys;Director - Adam bizanski"
-v[:url] =  "http://www.youtube-nocookie.com/embed/Ft_-5kuYY-E"
-v[:typename]  =  "music_video"
-v.save
-
-v = Video.new()
-v[:title] =  "A Secret Day"
-v[:image_url] =  "Posters/musicvideos/secretday.jpg" 
-v[:description]  =  "Omer Leshem;Director - Asaph Polonsky"
-v[:url] =  "http://www.youtube-nocookie.com/embed/eGbItkCl1g4"
-v[:typename]  =  "music_video"
-v.save
-
-v = Video.new()
-v[:title] ="Paul" 
-v[:image_url] ='Posters/films/paul.jpg'
-v[:description] ='Israel 2011, 26min<br>Director : Adam Bizanski'
-v[:url] ='http://www.youtube-nocookie.com/embed/1xEReh8ygnU',
-v[:synopsis] ='Still in the aftermath of a tough break up, Paul\'s life is slowly deteriorating. A mindless burglary of his rented apartment forces him to to push through the underworld of Tel Avivto investigate.<br><br><b>Haifa International Film Festival</b> - 2011' 
-v[:typename] ="film"
-v.save
-
-v = Video.new()
-v[:title] ="Martha Must Fly" 
-v[:image_url] ='Posters/films/martha.jpg' 
-v[:description] ='Israel 2011, 26min<br>Director : Ma\'ayan Rypp<br>'
-v[:url] ='http://www.youtube-nocookie.com/embed/Kjc4ooThuO8'
-v[:synopsis] ='Martha is a foreign worker employed as a caretaker of sick old woman who refuses to die. Martha\'s only moments of freedom come when she delves into her imaginary world. Feeling trapped and lonely, Martha tries to free herself but the authorities make it clear to her that until the old woman dies she must stay. She decides to fight for her freedom but reality pushes her into her fantasy world, one last time.<br><br><b>Cannes - Cinefoundation</b> - official selection 2011<br><b>Jerusalem International Film Festival</b> - Israeli Short Film Competition 2011<br><b>Cyprus International Short Film Festival</b> - 2011 - Received Special Mention for Best Actress and Official Students Choice.<br><b>Rehovot Women\'s Film Festival</b> - nominated for Best Drama and winner of most Promising Director<br><b>Lodz 18th International Film and TV Schools\' Festival \'MEDIASCHOOL 2011\'</b><br><b>International Student and Video Festival of Beijing Film Academy</b> - 2011<br><b>New Taipei City Film Festival</b> - Panorama Program, 2011'
-v[:typename] ="film"
-v.save
-
-v = Video.new()
-v[:title] ="In Bed at 10pm" 
-v[:image_url] ='Posters/films/bed.jpg' 
-v[:description] ='Israel 2010, 15min<br>Director : Asaph Polonsky'
-v[:url] ='http://www.youtube-nocookie.com/embed/AwgqgWsyax8'
-v[:synopsis] ='Rachel is a librarian; she knows all about how language works. When her lover\'s mobile phone rings twice during a sleep over in her flat, he informs her of its meaning. His wife needs him, it is urgent and overrides their arrangement that he keep a mistress. At 70, how will Rachel find a love deeper than Motti\'s and move from mistress to top billing? She must act. With the help of a younger colleague, she \"tweaks\" her internet profile and begins the dispiriting process of dating. Disappointment is everywhere, just as it is for younger wannabe lovers. It\'s not so much a moral dilemma as a literary one.<br><br><b>CFC - Toronto International Film Festival</b> - 2011<br><b>MIFF - Milano International Film Festival</b> - 2011<br><b>L.A. Shorts Fest</b> - 2011<br><b>Jerusalm International Film Festival</b> - 2010'
-v[:typename] ="film"
-v.save
-
-v = Video.new()
-v[:title] ="Private Rooms" 
-v[:image_url] ='Posters/films/privaterooms.jpg'
-v[:description] =''
-v[:url] =''
-v[:synopsis] =''
-v[:typename] ="film"
-v.save
-
-v = Video.new()
-v[:title] ="Zipper"
-v[:image_url] ='Posters/films/zipper.jpg'
-v[:description] ='Israel 2008, 34min<br>Director : Asaph Polonsky'
-v[:url] ='http://www.youtube-nocookie.com/embed/g84VOBqisaQ'
-v[:synopsis] ='Surrounded by fake landscapes formed by jigsaw puzzles and being dependent upon high dosage of tranquilizers, the fragile reality that Yaki has built for himself during his compulsory solitude will shatter in face of the complex relationship that would ensue with the stranger invading his house - and life.<br><br><b>Mexico Film Festival 2010</b> - Silver Palm Award Winner<br><b>Jerusalem International Film Festival</b> - 2009<br><b>Akbank Short Film Festival</b> - 2008<br><b>Miami Short Film Festival</b> - 2008<br><b>Boston Jewish Film Festival</b> - 2009<br><b>Real to Reel Film Festival</b> - 2009<br><b>Glimmer: the 7th Hull International Film Festival</b> - 2009'
-v[:typename] ="film"
+v[:title] = "Zipper"
+v[:image_url] = "Posters/films/zipper.jpg"
+v[:description] = "Israel 2008, 34min;Director : Asaph Polonsky"
+v[:url] = "http://www.youtube-nocookie.com/embed/g84VOBqisaQ"
+v[:synopsis] => "Surrounded by fake landscapes formed by jigsaw puzzles and being dependent upon"
+v[:synopsis] += " high dosage of tranquilizers, the fragile reality that Yaki has built for himself"
+v[:synopsis] += " during his compulsory solitude will shatter in face of the complex relationship"
+v[:synopsis] += " that would ensue with the stranger invading his house - and life.;;"
+v[:synopsis] += "<b>Mexico Film Festival 2010</b> - Silver Palm Award Winner;<b>Jerusalem International "
+v[:synopsis] += " Film Festival</b> - 2009;<b>Akbank Short Film Festival</b> - 2008;<b>Miami Short Film "
+v[:synopsis] += " Festival</b> - 2008;<b>Boston Jewish Film Festival</b> - 2009;<b>Real to Reel Film Festival</b>"
+v[:synopsis] += " - 2009;<b>Glimmer: the 7th Hull International Film Festival</b> - 2009"
+v[:typename] = "film"
 v.save

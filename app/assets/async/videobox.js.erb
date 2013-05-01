@@ -1,22 +1,17 @@
-showMovieDetails = function(title, description, vidlink, synopsis) {
-  var html = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
-  html.find("#title").html(title);
-  html.find("#description").html(description);
-  html.find("#vid").attr("src", html.find("#vid").attr("src").replace(/vidlink/g, vidlink));
-  html.find("#synopsis").html(synopsis);
+showFilm = function(film) {
+  var width = film.title.match('Martha') ? 970 : 950;
+  var height = film.title.match('Martha') ? 450 : 400;
+  var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
+  videoHTML.find("#title").html(film.title);
+  videoHTML.find("#description").html(film.description);
+  videoHTML.find("#vid").attr("src", videoHTML.find("#vid").attr("src").replace(/vidlink/g, film.vidlink));
+  videoHTML.find("#synopsis").html(film.synopsis);
 
-  var width = title.match('Martha') ? 970 : 950;
-  var height = title.match('Martha') ? 450 : 400;
-
-  // $.fancybox.open({
-  //   width: width,
-  //   height: height,
-  //   type: 'html',
-  //   openEffect: 'fade',
-  //   content: unescape(html),
-  //   afterShow: function () {
-  //     $(".fancybox-inner").css("max-height", window.screen.availHeight - 175);
-  //     this.minHeight = $(this.content).css("height");
-  //   }
-  // });
-}
+  $.fancybox.open({
+    width: width,
+    height: height,
+    type: 'html',
+    openEffect: 'fade',
+    content: $("<div>").html(videoHTML).html()
+  });
+};
