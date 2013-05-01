@@ -1,4 +1,4 @@
-<div id="films" class="doctext" style="height: 270px;">
+<div id="films" class="doctext" style="height: 320px;">
 	<% Video.by_type("film").each do |f| %>
 	<a class="filmthumb" title="<%= f.title %>" data_url="<%= f.url %>" href="javascript:void(0);">
 		<img title="<%= f.title %>" src="<%= asset_path f.image_url %>" /> 

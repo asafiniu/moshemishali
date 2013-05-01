@@ -1,29 +1,17 @@
-<table class="preview-table">
-    <tr>
-        <td>
-            <div class="dirbutton" onmouseover="scroll('down');" onmouseout="scroll('stop');">&#8593;</div><br>
-            <marquee id="mrq" behaviour="scroll" direction="up" scrollamount="0" height="250" vspace="0">
-                <table>
-                    <% Video.by_type("music_video").each do |mv| %>
-                        <tr colspan="2">
-                            <td>
-                                <img class="video_thumbnail" typename="<%= mv.typename %>" title="<%= mv.title %>" src="<%= asset_path mv.image_url %>" data_url="<%= mv.url %>" />
-                            </td>
-                            <td>
-                                <b><%= mv.title %></b><br>
-                                <%= raw mv.description.to_s.gsub(";","<br>") %><br>
-                            </td>
-                        </tr>
-                    <% end %>
-                </table>
-            </marquee><br><br>
-            <div class="dirbutton" onmouseover="scroll('up');" onmouseout="scroll('stop');">&#8595;</div>
-        </td>
-        <td>
-            <div id="frameDisplay" class="vidframe music_video">
-                <br><br><br><br>
-                Click on the left side of this page to show a video
+<div class="preview-table">
+    <div class="jqueryslider" id="slider_mv">
+        <% Video.by_type("music_video").each do |mv| %>
+        <div class="slider_single">
+            <img class="video_thumbnail" typename="<%= mv.typename %>" title="<%= mv.title %>" src="<%= asset_path mv.image_url %>" data_url="<%= mv.url %>" />
+            <div class="info">
+                <b><%= mv.title.gsub("&quot;","'") %></b><br>
+                <%= raw mv.description.to_s.gsub("&quot;","'").gsub(";","<br>") %>
             </div>
-        </td>
-    </tr>
-</table>
+        </div>
+        <% end %>                
+    </div>
+    <div id="frameDisplay" class="vidframe music_video">
+        <br><br><br><br>
+        Click on the left side of this page to show a video
+    </div>
+</div>

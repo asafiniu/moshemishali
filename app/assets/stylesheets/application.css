@@ -126,7 +126,7 @@ Subsubheader
 }
 .preview-table
 {
-    width: 80%;
+    /*width: 80%;*/
     height: 270px;
     color: Gray;
     background-color: Black;
@@ -273,3 +273,22 @@ Subsubheader
     text-shadow: none;
 }
 /*											VideoContent.css*/
+/*                                          NEW ADDITIONS   */
+.preview-table .jqueryslider,
+.preview-table .slider_single {
+    float:left;
+    width: 500px
+}
+.preview-table .vidframe {
+    float:right
+}
+.preview-table .slider_single img.video_thumbnail {
+    float:left;
+    display:inline
+}
+.preview-table .slider_single .info {
+    text-align:left;
+    display:block;
+    margin-left: 230px
+}
+/*                                          NEW ADDITIONS   */

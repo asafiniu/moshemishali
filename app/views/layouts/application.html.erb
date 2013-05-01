@@ -4,6 +4,8 @@
 	<!-- Scripts -->
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+	<link href="/jQuerySlider/slider.css" rel="stylesheet" type="text/css" />
+	
 	<%= javascript_include_tag "application" %>
 	<!-- META Content -->
 	<title>Moshe Mishali - Director of Photography</title>
@@ -21,6 +23,7 @@
 	<div id="footer"><%= render :partial => "layouts/footer" %></div>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.4"></script>
+	<script src="/jQuerySlider/jquery-slider.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	<%= render :file => "../assets/async/videobox", :formats => [:js] %>
 	</script>
