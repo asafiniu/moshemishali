@@ -11,7 +11,8 @@ attachFilmsEvents = function() {
 			synopsis: a.find(".syn").html()
 		};
 
-		window. f = film;
-		showFilm(film);
+		if ( film.vidlink && film.vidlink.match("http") ) {
+			showFilm(film);
+		}
 	});
 }

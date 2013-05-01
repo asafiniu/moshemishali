@@ -40,7 +40,7 @@ Video.create({
 
 Video.create({
 :title => "MyCheck",
-:image_url => "Images/Posters/commercial/mycheck.jpg",
+:image_url => "Posters/commercial/mycheck.jpg",
 :url => "http://www.youtube-nocookie.com/embed/hcgOdQQonN4",
 :description => "Director - Vania Heymann",
 :typename => "commercial"
@@ -48,7 +48,7 @@ Video.create({
 
 Video.create({
 :title => "American Express - The Young Professionals Project",
-:image_url => "Images/Posters/commercial/typ.jpg",
+:image_url => "Posters/commercial/typ.jpg",
 :url => "http://www.youtube-nocookie.com/embed/uHZo6c0Fvgg",
 :description => "Director - Vania Heymann",
 :typename => "commercial"
@@ -56,7 +56,7 @@ Video.create({
 
 Video.create({
 :title => "Pepsi Max",
-:image_url => "Images/Posters/commercial/pepsimax.jpg",
+:image_url => "Posters/commercial/pepsimax.jpg",
 :url => "http://www.youtube-nocookie.com/embed/gfpW-hKx2Yg",
 :description => "Director - Vania Heymann",
 :typename => "commercial"
@@ -64,7 +64,7 @@ Video.create({
 
 Video.create({
 :title => "Soundcheck - Aviv Geffen",
-:image_url => "Images/Posters/commercial/maccabi_avivgeffen.jpg",
+:image_url => "Posters/commercial/maccabi_avivgeffen.jpg",
 :url => "http://www.youtube-nocookie.com/embed/djr3cIVRGgw",
 :description => "Director - Adam Bizanski",
 :typename => "commercial"
@@ -167,7 +167,7 @@ v[:title] = "Zipper"
 v[:image_url] = "Posters/films/zipper.jpg"
 v[:description] = "Israel 2008, 34min;Director : Asaph Polonsky"
 v[:url] = "http://www.youtube-nocookie.com/embed/g84VOBqisaQ"
-v[:synopsis] => "Surrounded by fake landscapes formed by jigsaw puzzles and being dependent upon"
+v[:synopsis] = "Surrounded by fake landscapes formed by jigsaw puzzles and being dependent upon"
 v[:synopsis] += " high dosage of tranquilizers, the fragile reality that Yaki has built for himself"
 v[:synopsis] += " during his compulsory solitude will shatter in face of the complex relationship"
 v[:synopsis] += " that would ensue with the stranger invading his house - and life.;;"
