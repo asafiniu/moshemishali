@@ -94,6 +94,8 @@ Subsubheader
 /*											VideoContent.css*/
 .doctext
 {
+    width: 80%;
+    margin: 5px auto 0;
     font-size: 12pt;
     color: Gray;
     padding-left: 3.5%;
@@ -101,22 +103,31 @@ Subsubheader
     overflow-x: hidden;
     overflow-y: auto;
 }
+.doctext .slider_single img {
+    filter: alpha(opacity=70)
+}
+.doctext .slider_single:hover img {
+    filter: alpha(opacity=100);
+}
 .doctext img
 {
     width: 200px;
     height: 280px;
     border-color: Black;
     border-style: groove;
-    padding-left: 15pt;
-    padding-right: 15pt;
+    padding: 7px;
     opacity: 0.7;
-    filter: alpha(opacity=70);
 }
 .doctext img:hover
 {
-    cursor: pointer;
     opacity: 1;
     filter: alpha(opacity=100);
+}
+.doctext a.soon {
+    cursor: not-allowed
+}
+.doctext a:not(.soon) img {
+    cursor: pointer
 }
 .descCell
 {
@@ -126,11 +137,11 @@ Subsubheader
 }
 .preview-table
 {
-    /*width: 80%;*/
     height: 270px;
     color: Gray;
     background-color: Black;
-    margin: 0px auto 0px 2.5%;
+    margin: 40px auto 0 auto;
+    width: 1050px
 }
 .preview-table td
 {
@@ -279,6 +290,9 @@ Subsubheader
     float:left;
     width: 500px
 }
+.preview-table .jqueryslider {
+    height: inherit
+}
 .preview-table .vidframe {
     float:right
 }
@@ -290,5 +304,38 @@ Subsubheader
     text-align:left;
     display:block;
     margin-left: 230px
+}
+a.filmthumb {
+    text-decoration: none;
+}
+a.filmthumb.soon {
+    cursor:not-allowed;
+}
+.bold {
+    font-size: 13pt;
+    font-weight: bold
+}
+.center-text {
+    text-align:center
+}
+.fancybox-skin.film {
+    /*background-color: #505050;*/
+    background-color: rgb(175, 175, 175);
+    color: Black;
+    padding: 6px;
+    border: 2px outset #666;
+    border-radius: 15px !important
+}
+.jqueryslider .item {
+    height: 125px !important
+}
+.preview-table .inst_vidframe {
+    display: block;
+    margin-top: 40%
+}
+.fb-like {
+    position: absolute !important;
+    top: 161px !important;
+    left: 50px !important
 }
 /*                                          NEW ADDITIONS   */

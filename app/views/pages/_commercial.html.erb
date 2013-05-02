@@ -1,5 +1,5 @@
 <div class="preview-table">
-    <div class="jqueryslider" id="slider_com">
+    <div class="jqueryslider manual vertical" id="slider_com">
         <% Video.by_type("commercial").each do |com| %>
         <div class="slider_single">
             <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
@@ -11,7 +11,6 @@
         <% end %>                
     </div>
     <div id="frameDisplay" class="vidframe commercial">
-        <br><br><br><br>
-        Click on the left side of this page to show a video
+        <span class="inst_vidframe">Click on the left side of this page to show a video</span>
     </div>
 </div>

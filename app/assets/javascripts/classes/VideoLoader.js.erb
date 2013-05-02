@@ -13,7 +13,8 @@ VideoLoader = (function(){
 	 };
 	 var _getVideoSize = function() {
 	 	var h = parseInt($('#main').height());
-	 	var vidH = Math.floor(((h - (h % 100))));
+	 	// var vidH = Math.floor(((h - (h % 100))));
+	 	var vidH = h;
 	 	var vidW = Math.floor((350 / 219) * vidH);
 	 	return { height: vidH, width: vidW };
 	 };

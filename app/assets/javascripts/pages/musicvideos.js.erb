@@ -1,3 +1,8 @@
 $(document).ready(function(e){
-	initSlider("slider_mv", "vertical");
+	initSlider({
+		sliderId: "slider_mv",
+		direction: "vertical",
+		scrollDuration: 500,
+		circular: true
+	});
 });

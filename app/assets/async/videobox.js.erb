@@ -12,6 +12,10 @@ showFilm = function(film) {
     height: height,
     type: 'html',
     openEffect: 'fade',
-    content: $("<div>").html(videoHTML).html()
+    content: $("<div>").html(videoHTML).html(),
+    beforeShow: function(e) {
+      $(".fancybox-inner").css("max-width", width);
+      $(".fancybox-skin").addClass("film");
+    }
   });
 };

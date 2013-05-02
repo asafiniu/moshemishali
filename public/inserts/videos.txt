@@ -177,3 +177,26 @@ v[:synopsis] += " Festival</b> - 2008;<b>Boston Jewish Film Festival</b> - 2009;
 v[:synopsis] += " - 2009;<b>Glimmer: the 7th Hull International Film Festival</b> - 2009"
 v[:typename] = "film"
 v.save
+
+Video.create({
+:title => "The Thirsty Man",
+:image_url => "Posters/films/thirsty.jpg",
+:description => "Israel 2012, 6min;Director: Eitan Aner",
+:url => "http://www.youtube-nocookie.com/embed/FIBSTK4ndHM",
+:typename => "film"
+})
+***************************************************************************************************************************************
+NOT YET UPLOADED NOT YET UPLOADED NOT YET UPLOADED NOT YET UPLOADED NOT YET UPLOADED NOT YET UPLOADED NOT YET UPLOADED NOT YET UPLOADED
+***************************************************************************************************************************************
+v = Video.new()
+v[:title] = "Batman at the Checkpoint"
+v[:image_url] = "Posters/films/batman.jpg"
+v[:description] = "Israel 2011, 9min;Director: Rafael Balulu"
+v[:url] = ""
+v[:synopsis] = "An Israeli car and a Palestinian car are stuck in traffic in front of a barricade at the entrance of Jerusalem,"
+v[:synopsis] += " coming from the Dead Sea. Yuval and Mahmoud, both two six-year-old boys, find that it&quot;s much more fun to"
+v[:synopsis] += " pass the time playing with one another. But when Mahmoud&quot;s father tries to cut into the other&quot;s lane,"
+v[:synopsis] += " Yuval&quot;s father bumps into his car in an attempt to prevent him, and things start to get complicated."
+v[:synopsis] += " What began as a game becomes an outright battle for a plastic Batman doll.;;<b>Winner of Berlin Today award</b> - 2012"
+v.save
+
