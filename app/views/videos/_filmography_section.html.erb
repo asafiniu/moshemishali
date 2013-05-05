@@ -2,8 +2,8 @@
 <ul>
 	<% Video.by_type(type).each do |f| %>
 	<li>
-		<span><%= f.title %></span> 
-		<%= f.description %>
+		<span><%= f.title.gsub("&#150;", "-") %></span> 
+		<%= f.description.gsub("&#150;", "-") %>
 	</li>
 	<% end %>
 </ul>

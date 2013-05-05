@@ -26,7 +26,7 @@ class Video < ActiveRecord::Base
 			:description =>  "with Asaf Avidan;Director - Adam bizanski;2nd Unit cinematography - Eli Aharonson",
 			:typename =>  "commercial"	
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Maccabi Home Tour - The SMS",
@@ -35,7 +35,7 @@ class Video < ActiveRecord::Base
 			:description => "with Shlomi Shaban;Director - Adam bizanski",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Maccabi Home Tour - Big Time",
@@ -44,7 +44,7 @@ class Video < ActiveRecord::Base
 			:description => "with Shlomi Shaban;Director - Adam bizanski",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Maccabi Home Tour - The Monolog",
@@ -53,7 +53,7 @@ class Video < ActiveRecord::Base
 			:description => "with Shlomi Shaban;Director - Adam bizanski",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "El Namrod",
@@ -62,7 +62,7 @@ class Video < ActiveRecord::Base
 			:description => "Directors - Tal Greenberg &amp; Yasmin Shryer;Additional Cinematography - Roee Mandelevitch",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "MyCheck",
@@ -71,7 +71,7 @@ class Video < ActiveRecord::Base
 			:description => "Director - Vania Heymann",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "American Express - The Young Professionals Project",
@@ -80,7 +80,7 @@ class Video < ActiveRecord::Base
 			:description => "Director - Vania Heymann",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Pepsi Max",
@@ -89,7 +89,7 @@ class Video < ActiveRecord::Base
 			:description => "Director - Vania Heymann",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Soundcheck - Aviv Geffen",
@@ -98,13 +98,13 @@ class Video < ActiveRecord::Base
 			:description => "Director - Adam Bizanski",
 			:typename => "commercial"
 			})
-		i++
+		# i++
 
-		puts "Created " + i.to_s + " commercials"
+		logger.info("Created " + i.to_s + " commercials")
 	end
 
 
-	def create_musicvideos
+	def self.create_musicvideos
 		i = 0
 		Video.create({
 			:title => "Amsterdam",
@@ -113,7 +113,7 @@ class Video < ActiveRecord::Base
 			:description => "Hageveret Harishona;Director - Adi Yager",
 			:typename => "music_video"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Too Afraid to Love You",
@@ -122,7 +122,7 @@ class Video < ActiveRecord::Base
 			:url => @@ytb + "Ft_-5kuYY-E",
 			:typename => "music_video"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "A Secret Day",
@@ -131,7 +131,7 @@ class Video < ActiveRecord::Base
 			:url => @@ytb + "eGbItkCl1g4",
 			:typename => "music_video"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Halomot Ra&quot;im (Bad Dreams)",
@@ -140,9 +140,9 @@ class Video < ActiveRecord::Base
 			:url => @@ytb + "qqZ1HwLMoro",
 			:typename => "music_video"
 			})
-		i++
+		# i++
 
-		puts "Created " + i.to_s + " music videos"
+		logger.info("Created " + i.to_s + " music videos")
 	end
 
 	def self.create_films
@@ -158,7 +158,7 @@ class Video < ActiveRecord::Base
 		v[:synopsis] += "<b>Haifa International Film Festival</b> - 2011" 
 		v[:typename] = "film"
 		v.save
-		i++
+		# i++
 
 		v = Video.new()
 		v[:title] = "Martha Must Fly" 
@@ -181,7 +181,7 @@ class Video < ActiveRecord::Base
 		v[:synopsis] += "<b>New Taipei City Film Festival</b> - Panorama Program, 2011"
 		v[:typename] = "film"
 		v.save
-		i++
+		# i++
 
 		v = Video.new()
 		v[:title] = "In Bed at 10pm" 
@@ -202,14 +202,14 @@ class Video < ActiveRecord::Base
 		v[:synopsis] += "<b>L.A. Shorts Fest</b> - 2011;<b>Jerusalm International Film Festival</b> - 2010"
 		v[:typename] = "film"
 		v.save
-		i++
+		# i++
 
 		Video.create({
 			:title => "Private Rooms",
 			:image_url => "Posters/films/privaterooms.jpg",
 			:typename => "film"
 			})
-		i++
+		# i++
 
 		v = Video.new()
 		v[:title] = "Zipper"
@@ -226,7 +226,7 @@ class Video < ActiveRecord::Base
 		v[:synopsis] += " - 2009;<b>Glimmer: the 7th Hull International Film Festival</b> - 2009"
 		v[:typename] = "film"
 		v.save
-		i++
+		# i++
 
 		Video.create({
 			:title => "The Thirsty Man",
@@ -235,7 +235,7 @@ class Video < ActiveRecord::Base
 			:url => @@ytb + "FIBSTK4ndHM",
 			:typename => "film"
 			})
-		i++
+		# i++
 
 		# v = Video.new()
 		# v[:title] = "Batman at the Checkpoint"
@@ -248,9 +248,9 @@ class Video < ActiveRecord::Base
 		# v[:synopsis] += " Yuval&quot;s father bumps into his car in an attempt to prevent him, and things start to get complicated."
 		# v[:synopsis] += " What began as a game becomes an outright battle for a plastic Batman doll.;;<b>Winner of Berlin Today award</b> - 2012"
 		# v.save
-		# i++
+		# # i++
 
-		puts "Created " + i.to_s + " films"
+		logger.info("Created " + i.to_s + " films")
 	end
 
 	def self.create_filmography
@@ -260,84 +260,84 @@ class Video < ActiveRecord::Base
 			:description => "50 min, short drama, work in progress, 2013.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Zirei Poranut", 
 			:description => "60 min, short drama, 2013.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Shadows",
 			:description => "17 min, Short film, work in progress, 2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Mesuvag Harig", 
 			:description => "80 min, Horror feature film, HD, work in progress, 2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Mot Neshika",
 			:description => "Short film, HD, work in progress, 2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Windows 2000", 
 			:description => "indi, feature film, HD, work in progress, 2011&#150;2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Batman at a Checkpoint", 
 			:description => "9 min, Short film, HD, winner of Berlin Today Award at Berlin Film Festival, 2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Paul", 
 			:description => "26 min, short film, Edinburgh Film Festival, winner of Silver Hugo at Chicago film festival, 2011 &#150; 2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Marta Must Fly", 
 			:description => "26 min, short film. HD, Cannes film festival, 2011, cinefoundation official selection, Jerusalem film festival, 2011.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "In bed at 10 p.m.", 
 			:description => "15 min, short film, HD, Toronto short film festival, 2011, Milan film festival, 2011, L.A. short film festival 2011, Jerusalem film festival, 2010.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Private Rooms", 
 			:description => "27 min, short film, HD, Jerusalem film festival, 2010.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({
 			:title => "Zipper", 
 			:description => "34 min, short film, DIGIBETA, Miami film festival, 2009, Jerusalem film festival, 2009.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		# Filmography - Music Videos
 
@@ -346,56 +346,56 @@ class Video < ActiveRecord::Base
 			:description => "TYP music video, 2012.",
 			:typename => "filmography_film"
 			})
-		i++
+		# i++
 
 		Video.create({ 
 			:title => "MyCheck", 
 			:description => "web commercial, 2012.", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Time", 
 			:description => "Izabo music video (Eurovision song), 2012.", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "I like it", 
 			:description => "Izabo music video.", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 
 		Video.create({ 
 			:title => "Pepsi Max", 
 			:description => "Beatbox web commercial, 2012.", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 
 		Video.create({ 
 			:title => "Maccabi Beer Home Tour", 
 			:description => "5 web commercials, 2010&#150;2012.", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Dancing with Stars", 
 			:description => "TV promo, 2010", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Narroweyes", 
 			:description => "video dance, winner of Tel Aviv int. Vdance festival, 2007.", 
 			:typename => "filmography_musicvideo" 
 			}) 
-		i++
+		# i++
 
 		# Filmography - Television
 
@@ -404,71 +404,71 @@ class Video < ActiveRecord::Base
 			:description => "2nd unit cinematography, 2013", 
 			:typename => "filmography_television" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Bekizur", 
 			:description => "TV/Web series, DOP, 2012.", 
 			:typename => "filmography_television" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Zamar Mizrahi", 
 			:description => "TV comedy, 2nd unit cinematography.", 
 			:typename => "filmography_television" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Pilpelim Tsehubim", 
 			:description => "1st & 2nd seasons, TV series, additional cinematography, 2010.", 
 			:typename => "filmography_television" 
 			}) 
-		i++
+		# i++
 		
 		Video.create({ 
 			:title => "Holly Community, Katmandu", 
 			:description => "TV series, supplements d.o.p, 2011.", 
 			:typename => "filmography_television" 
 			}) 
-		i++
+		# i++
         
         Video.create({ 
         	:title => "Galis", 
         	:description => "TV series, 2nd unit cinematography, 2011&#150;2012.", 
         	:typename => "filmography_television" 
         	}) 
-        i++
+        # i++
         
         Video.create({ 
         	:title => "Kovach & Duvdevani", 
         	:description => "TV series, 2 unit cinematography, 2011.", 
         	:typename => "filmography_television" 
         	}) 
-        i++
+        # i++
         
         Video.create({ 
         	:title => "Mivza Kipod", 
         	:description => "TV series, 2 unit cinematography, 2011", 
         	:typename => "filmography_television" 
         	}) 
-        i++
+        # i++
         
         Video.create({ 
         	:title => "Survivor", 
         	:description => "season 2, 4 & 5, Technical director, 2008&#150;2010", 
         	:typename => "filmography_television" 
         	}) 
-        i++
+        # i++
         
         Video.create({ 
         	:title => "Top Gear", 
         	:description => "TV series, Israeli version, 2nd season, 2008", 
         	:typename => "filmography_television" 
         	}) 
-        i++
+        # i++
 
-        puts "Created " + i.to_s + " filmography records"
+        logger.info("Created " + i.to_s + " filmography records")
     end
 end
