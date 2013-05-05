@@ -1,4 +1,5 @@
-<div class="preview-table">
+<div class="pageheader">Music Videos & Video Art</div>
+<div class="video-gallery">
     <div class="jqueryslider manual vertical" id="slider_mv">
         <% Video.by_type("music_video").each do |mv| %>
         <div class="slider_single">
@@ -10,7 +11,7 @@
         </div>
         <% end %>                
     </div>
-    <div id="frameDisplay" class="vidframe music_video">
+    <div class="vidframe music_video">
         <span class="inst_vidframe">Click on the left side of this page to show a video</span>
     </div>
 </div>

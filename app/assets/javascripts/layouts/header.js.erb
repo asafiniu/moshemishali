@@ -3,7 +3,7 @@ $(document).ready(function(e){
   OnLoad();
 });
 attachEvents = function() {
-	$(".buttonmenu a.menubutton").on("click", function(e){
+	$(".headerbuttons a").on("click", function(e){
 		hideAllButSection($(e.target).attr("goto").toLowerCase());
 	});
 };

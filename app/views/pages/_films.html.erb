@@ -1,4 +1,5 @@
-<div id="films" class="doctext" style="height: 280px;">
+<div class="pageheader">Films</div>
+<div class="films">
 	<% Video.by_type("film").each do |f| %>
 	<a class="filmthumb<%= " soon" if !f.url %>" title="<%= f.title.gsub("&quot;","'") %>" data_url="<%= f.url %>" href="javascript:void(0);">
 		<img title="<%= f.title.gsub("&quot;","'") %><%= " (Video coming soon...)" if !f.url %>" src="<%= asset_path f.image_url %>" /> 
