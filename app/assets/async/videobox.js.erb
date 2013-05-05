@@ -1,21 +1,39 @@
 showFilm = function(film) {
-  var width = film.title.match('Martha') ? 970 : 950;
-  var height = film.title.match('Martha') ? 450 : 400;
   var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
+  var frame = $(videoHTML.find("iframe"));
   videoHTML.find("#title").html(film.title);
   videoHTML.find("#description").html(film.description);
-  videoHTML.find("#vid").attr("src", videoHTML.find("#vid").attr("src").replace(/vidlink/g, film.vidlink));
+  videoHTML.find(".vidout").prepend(getVideoFrame(film.vidlink));
   videoHTML.find("#synopsis").html(film.synopsis);
 
   $.fancybox.open({
-    width: width,
-    height: height,
     type: 'html',
     openEffect: 'fade',
     content: $("<div>").html(videoHTML).html(),
     beforeShow: function(e) {
-      $(".fancybox-inner").css("max-width", width);
       $(".fancybox-skin").addClass("film");
     }
   });
 };
+getVideoFrame = function(videoUrl) {
+  var params = {
+    modestbranding:1,
+    autohide:1,
+    showinfo:0,
+    hd:1
+  };
+
+  if ( false==$.isEmptyObject(params) ) {
+    videoUrl += "?";
+    for(p in params) {
+      videoUrl += p + "=" + params[p] + "&";
+    }
+
+    videoUrl = videoUrl.substr(0,videoUrl.length-1);
+  }
+
+  return $("<iframe>", {
+    src: videoUrl,
+    frameborder: 0
+  });
+}

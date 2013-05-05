@@ -11,56 +11,8 @@
  *= require_self
  *= require_tree .
  */
- /*									MosheMishaliMasterPage.css*/
- body
- {
-    background-color: #000;
-    direction: ltr;
-    font-family: Times New Roman;
-    font-size: 11pt;
-    overflow-x: hidden;
-}
-#main 
-{
-    font-family: Times New Roman;
-    font-size: 12pt;
-    color: Gray;
-    background-color: Black;
-    margin: 0 auto;
-    width: 1183px;
-}
-/*									MosheMishaliMasterPage.css*/
-/*											ContentPage.css*/
-/*
-//////////////////// Page Text ////////////////////////
-*/
-Header
-{
-    font-size: 30pt;
-    color: Gray;
-    margin: 0px auto 0px 16.5%;
-}
-ColorHeader
-{
-    font-size: 30pt;
-    color: #E1C811;
-    margin: 0px auto 0px 16.5%;
-}
-SubHeader
-{
-    font-size: 18pt;
-    font-weight: bold;
-    color: Gray;
-    margin: 0px auto 0px 16.5%;
-}
-Subsubheader
-{
-    font-size: 18pt;
-    font-weight: bold;
-    color: Gray;
-}
-/*
-//////////////////// Master Menu ////////////////////////
+
+/*//////////////////// Master Menu ////////////////////////
 */
 .buttonmenu
 {
@@ -128,12 +80,6 @@ Subsubheader
 }
 .doctext a:not(.soon) img {
     cursor: pointer
-}
-.descCell
-{
-    font-size: 11pt;
-    vertical-align: top;
-    text-align: justify;
 }
 .preview-table
 {
@@ -305,30 +251,6 @@ Subsubheader
     display:block;
     margin-left: 230px
 }
-a.filmthumb {
-    text-decoration: none;
-}
-a.filmthumb.soon {
-    cursor:not-allowed;
-}
-.bold {
-    font-size: 13pt;
-    font-weight: bold
-}
-.center-text {
-    text-align:center
-}
-.fancybox-skin.film {
-    /*background-color: #505050;*/
-    background-color: rgb(175, 175, 175);
-    color: Black;
-    padding: 6px;
-    border: 2px outset #666;
-    border-radius: 15px !important
-}
-.jqueryslider .item {
-    height: 125px !important
-}
 .preview-table .inst_vidframe {
     display: block;
     margin-top: 40%
@@ -338,4 +260,43 @@ a.filmthumb.soon {
     top: 161px !important;
     left: 50px !important
 }
-/*                                          NEW ADDITIONS   */
+/*//////////////////////////Video details//////////////////////////////////*/
+.videodetails #title,
+.videodetails #description {
+    text-align:center;
+    font-weight: bold;
+    font-size: 32pt
+}
+.videodetails #description {
+    font-weight: normal;
+    font-size: 13pt
+}
+.videodetails iframe {
+    float:left;
+    width: 560px;
+    height: 315px;
+    margin: 2px 20px !important    
+}
+.videodetails #synopsis {
+    float:right;
+    width: 400px;
+    margin: 10px auto 0;
+    font-size: 11pt
+}
+.videodetails .vidout {
+    vertical-align: top; 
+    text-align: justify
+}
+a.filmthumb {
+    text-decoration: none;
+}
+a.filmthumb.soon {
+    cursor:not-allowed;
+}
+.fancybox-skin.film {
+    background-color: #afafaf;
+    color: #000;
+    padding: 6px;
+    border: 2px outset #666;
+    border-radius: 15px !important
+}

@@ -1,45 +1,7 @@
 
-<colorheader>Filmography</colorheader>
-<div class="doctext" style="height: 285px;">
-    <br>
-    <Subsubheader>Films &#150; d.o.p</Subsubheader>
-    <ul>
-        <li><font style="color: #E1C811">"Letters From The war"</font> 50 min, short drama, work in progress, 2013.</li>
-        <li><font style="color: #E1C811">"Zirei Poranut"</font> 60 min, short drama, 2013.</li>
-        <li><font style="color: #E1C811">"Shadows"</font> 17 min, Short film, work in progress, 2012.</li>
-        <li><font style="color: #E1C811">"Mesuvag Harig"</font> 80 min, Horror feature film, HD, work in progress, 2012.</li>
-        <li><font style="color: #E1C811">"Mot Neshika"</font> Short film, HD, work in progress, 2012.</li>
-        <li><font style="color: #E1C811">"Windows 2000"</font> indi, feature film, HD, work in progress, 2011&#150;2012.</li>
-        <li><font style="color: #E1C811">"Batman at a Checkpoint"</font> 9 min, Short film, HD, winner of Berlin Today Award at Berlin Film Festival, 2012.</li>
-        <li><font style="color: #E1C811">"Paul"</font> 26 min, short film, Edinburgh Film Festival, winner of Silver Hugo at Chicago film festival, 2011 &#150; 2012.</li>
-        <li><font style="color: #E1C811">"Marta Must Fly".</font> 26 min, short film. HD, Cannes film festival, 2011, cinefoundation official selection, Jerusalem film festival, 2011.</li>
-        <li><font style="color: #E1C811">"In bed at 10 p.m."</font> 15 min, short film, HD, Toronto short film festival, 2011, Milan film festival, 2011, L.A. short film festival 2011, Jerusalem film festival, 2010.</li>
-        <li><font style="color: #E1C811">"Private Rooms"</font> 27 min, short film, HD, Jerusalem film festival, 2010.</li>
-        <li><font style="color: #E1C811">"Zipper"</font> 34 min, short film, DIGIBETA, Miami film festival, 2009, Jerusalem film festival, 2009.</li>
-    </ul>
-    <Subsubheader>Commercial, Music videos &amp; Video art &#150; d.o.p</Subsubheader>
-    <ul>
-        <li><font style="color: #E1C811"></font></li>
-        <li><font style="color: #E1C811">"American Express"</font> TYP music video, 2012.</li>
-        <li><font style="color: #E1C811">"MyCheck"</font> web commercial, 2012.</li>
-        <li><font style="color: #E1C811">"Time"</font> Izabo music video (Eurovision song), 2012.</li>
-        <li><font style="color: #E1C811">"I like it"</font> Izabo music video.</li>
-        <li><font style="color: #E1C811">"Pepsi Max"</font> Beatbox web commercial, 2012.</li>
-        <li><font style="color: #E1C811">"Maccabi Beer Home Tour"</font> 5 web commercials, 2010&#150;2012.</li>
-        <li><font style="color: #E1C811">"Dancing with Stars"</font> TV promo, 2010</li>
-        <li><font style="color: #E1C811">"Narroweyes"</font> video dance, winner of Tel Aviv int. Vdance festival, 2007.</li>
-    </ul>
-    <Subsubheader>Television</Subsubheader>
-    <ul>
-        <li><font style="color: #E1C811">"Ptzuim Barosh"</font> 2nd unit cinematography, 2013</li>
-        <li><font style="color: #E1C811">"Bekizur"</font> TV/Web series, DOP, 2012.</li>
-        <li><font style="color: #E1C811">"Zamar Mizrahi"</font> TV comedy, 2nd unit cinematography.</li>
-        <li><font style="color: #E1C811">"Pilpelim Tsehubim"</font> 1st & 2nd seasons, TV series, additional cinematography, 2010.</li>
-        <li><font style="color: #E1C811">"Holly Community, Katmandu"</font> TV series, supplements d.o.p, 2011.</li>
-        <li><font style="color: #E1C811">"Galis"</font> TV series, 2nd unit cinematography, 2011&#150;2012.</li>
-        <li><font style="color: #E1C811">"Kovach & Duvdevani"</font> TV series, 2 unit cinematography, 2011.</li>
-        <li><font style="color: #E1C811">"Mivza Kipod"</font> TV series, 2 unit cinematography, 2011</li>
-        <li><font style="color: #E1C811">"Survivor"</font> season 2, 4 & 5, Technical director, 2008&#150;2010</li>
-        <li><font style="color: #E1C811">"Top Gear"</font> TV series, Israeli version, 2nd season, 2008</li>
-    </ul>
+<div class="pageheader">Filmography</div>
+<div class="doctext filmography">
+    <%= render :partial "filmography_section", :locals => {:title => "Films &#150; d.o.p", :type => "filmography_film"} %>
+    <%= render :partial "filmography_section", :locals => {:title => "Commercial, Music videos &amp; Video art &#150; d.o.p", :type => "filmography_musicvideo"} %>
+    <%= render :partial "filmography_section", :locals => {:title => "Television", :type => "filmography_television"} %>
 </div>

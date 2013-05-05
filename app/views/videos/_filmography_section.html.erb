@@ -1,0 +1,9 @@
+<div class="sectionheader"><%= title %></div>
+<ul>
+	<% Video.by_type(type).each do |f| %>
+	<li>
+		<span><%= f.title %></span> 
+		<%= f.description %>
+	</li>
+	<% end %>
+</ul>
