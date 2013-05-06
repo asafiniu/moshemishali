@@ -1,15 +1,14 @@
-var opts = {};
-opts = {
+var opts = {
     sliderId: "slider_mv",
-    direction: options.direction || "horizontal",
-    scrollInterval: options.scrollInterval || 500,
-    scrollDuration: options.scrollDuration || 1400,
-    hoverPause: options.hoverPause || true,
-    autoAdvance: options.autoAdvance || false,
-    scrollByEachThumb: options.scrollByEachThumb || true,
+    direction: "vertical",
+    scrollInterval: 500,
+    scrollDuration: 500,
+    hoverPause: true,
+    autoAdvance: false,
+    scrollByEachThumb: true,
     circular: true,
     largeImageSlider: null,
-    inSyncWithLargeImageSlider: options.inSyncWithLargeImageSlider || true,
+    inSyncWithLargeImageSlider: true,
     license: "mylicense"
 };
 
