@@ -5,8 +5,8 @@
         <div class="slider_single">
             <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
             <div class="info">
-                <b><%= com.title.gsub("&quot;","'") %></b><br>
-                <%= raw com.description.to_s.gsub("&quot;","'").gsub(";","<br>") %>
+                <p class="title"><%= com.title.gsub("&quot;","'") %></p>
+                <p class="description"><%= raw com.description.to_s.gsub("&quot;","'").gsub(";","<br>") %></p>
             </div>
         </div>
         <% end %>                

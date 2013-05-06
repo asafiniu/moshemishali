@@ -2,8 +2,8 @@ $(document).ready(function(e){
 	attachVideoThumbnailEvents();
 });
 attachVideoThumbnailEvents = function() {
-	$(".video_thumbnail").on("click", function(e){
-		var item = $(e.target);
+	$(".slider_single").on("click", function(e){
+		var item = $(e.target).parents(".slider_single").find("img");
 		$(".vidframe." + item.attr("typename")).html(VideoLoader.Youtube.GetFrameHTML(item.attr("data_url")));
 	});
 }
