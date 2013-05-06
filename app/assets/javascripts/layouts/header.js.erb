@@ -1,12 +1,11 @@
 $(document).ready(function(e){
 	attachEvents();
-	preloadImages();
 });
 attachEvents = function() {
 	$(document).resize(function(e){
 		$("#main").width(window.screen.availWidth-150)
 	}).resize();
-	$(".headerbuttons a").on("click", function(e){
+	$(".headerbuttons a.headerbutton").on("click", function(e){
 		hideAllButSection($(e.target).attr("goto").toLowerCase());
 	});
 };
@@ -14,26 +13,9 @@ hideAllButSection = function(sectionID) {
 	$(".section").hide();
 	$(".section#" + sectionID).show();
 };
-preloadImages = function() {
-	var images = [
-	"<%= asset_path 'Buttons/films.jpg' %>", 
-	"<%= asset_path 'Buttons/commercial.jpg' %>", 
-	"<%= asset_path 'Buttons/musicvideos.jpg' %>", 
-	"<%= asset_path 'Buttons/contact.jpg' %>", 
-	"<%= asset_path 'Buttons/stills.jpg' %>"
-	"<%= asset_path 'Buttons/films_pressed.jpg' %>", 
-	"<%= asset_path 'Buttons/commercial_pressed.jpg' %>", 
-	"<%= asset_path 'Buttons/musicvideos_pressed.jpg' %>", 
-	"<%= asset_path 'Buttons/contact_pressed.jpg' %>", 
-	"<%= asset_path 'Buttons/stills_pressed.jpg' %>"
-	"<%= asset_path 'Animated/wait.gif' %>", 
-	"<%= asset_path 'Posters/films/privaterooms.jpg' %>"
-	];
-
-	for (var i = 0; i < images.length; i++) {
-		if ( images[i] && images[i].match(/jpg|png|gif/i)) {
-			var pic = new Image();
-			pic.src = images[i];
-		}
+preloadImage = function(imageUrl) {
+	if ( imageUrl && imageUrl.match(/jpg|png|gif/i)) {
+		var pic = new Image();
+		pic.src = imageUrl;
 	}
 }

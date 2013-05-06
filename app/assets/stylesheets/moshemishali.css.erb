@@ -14,29 +14,54 @@ div#header {
 	width:100%
 }
 
-div#header table.headerbuttons {
+div#header div.headerbuttons {
+	width: 801px;
+	height:23px;
 	margin:0 auto;
 	position:relative;
 	top:150px
 }
 
-div#header table.headerbuttons a {
-	text-decoration:!important
+div#header div.headerbuttons a,
+div#contact div.networks a {
+	background: url(<%= asset_path "buttons.png" %>);
+	text-decoration:none !important;
+	display:inline-block;
+	opacity:0.7
 }
 
-div#header table.headerbuttons a img {
-	color:Silver;
-	cursor:pointer;
-	filter:alpha(opacity=70);
+div#header div.headerbuttons a:hover,
+div#contact div.networks a:hover {
+	opacity:1.0
+}
+
+div#header div.headerbuttons a {
 	height:23px;
-	opacity:0.7;
 	width:111px
 }
 
-div#header table.headerbuttons a img:hover {
-	filter:alpha(opacity=100);
-	opacity:1.0
+div#contact div.networks a {
+	height:30px;
+	width:30px
 }
+
+div#header div.headerbuttons a.commercial {background-position: 0px 0px}
+div#header div.headerbuttons a.commercial:hover {background-position: 0px -26px}
+div#header div.headerbuttons a.films {background-position: 0px -52px}
+div#header div.headerbuttons a.films:hover {background-position: 0px -78px}
+div#header div.headerbuttons a.stills {background-position: 0px -104px}
+div#header div.headerbuttons a.stills:hover {background-position: 0px -130px}
+div#header div.headerbuttons a.contact {background-position: -114px 0px}
+div#header div.headerbuttons a.contact:hover {background-position: -114px -26px}
+div#header div.headerbuttons a.home {background-position: -113px -52px}
+div#header div.headerbuttons a.home:hover {background-position: -113px -78px}
+div#header div.headerbuttons a.filmography {background-position: -228px 0px}
+div#header div.headerbuttons a.filmography:hover {background-position: -228px -26px}
+div#header div.headerbuttons a.musicvideos {background-position: -227px -52px}
+div#header div.headerbuttons a.musicvideos:hover {background-position: -227px -78px}
+div#contact div.networks a.facebook {background-position: -71px -154px}
+div#contact div.networks a.linkedin {background-position: -36px -154px}
+div#contact div.networks a.gmail {background-position: 0px -154px}
 
 div#main {
 	margin:0 auto
