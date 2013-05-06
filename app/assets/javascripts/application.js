@@ -16,8 +16,8 @@
 //= require_tree ../javascripts
 //= require_tree ../images
 //= require_tree ../stylesheets
-$(document).ready(function(e){
-	$(document).resize(function(e){
-		$("#main").width(window.screen.availWidth-150)
-	}).resize();
-})
+// $(document).ready(function(e){
+// 	$(document).resize(function(e){
+// 		$("#main").width(window.screen.availWidth-150)
+// 	}).resize();
+// })
