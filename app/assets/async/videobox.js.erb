@@ -3,7 +3,7 @@ showFilm = function(film) {
   var frame = $(videoHTML.find("iframe"));
   videoHTML.find("#title").html(film.title);
   videoHTML.find("#description").html(film.description);
-  videoHTML.find(".vidout").prepend(getVideoFrame(film.vidlink));
+  videoHTML.find(".vidout").prepend(VideoLoader.Youtube.GetFrameHTML(film.vidlink));
   videoHTML.find("#synopsis").html(film.synopsis);
 
   $.fancybox.open({
@@ -15,25 +15,3 @@ showFilm = function(film) {
     }
   });
 };
-getVideoFrame = function(videoUrl) {
-  var params = {
-    modestbranding:1,
-    autohide:1,
-    showinfo:0,
-    hd:1
-  };
-
-  if ( false==$.isEmptyObject(params) ) {
-    videoUrl += "?";
-    for(p in params) {
-      videoUrl += p + "=" + params[p] + "&";
-    }
-
-    videoUrl = videoUrl.substr(0,videoUrl.length-1);
-  }
-
-  return $("<iframe>", {
-    src: videoUrl,
-    frameborder: 0
-  });
-}

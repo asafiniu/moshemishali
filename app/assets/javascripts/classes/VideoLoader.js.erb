@@ -3,26 +3,35 @@ VideoLoader = (function(){
 	 * VideoLoader class (Static)
 	 * Load videos on even format
 	 */
-	 var _videoURI = "";
 	 var _YouTube = {
-	 	frameHTML: function(url) {
-	 		var params = '?modestbranding=1&amp;title=&amp;autohide=1&amp;showinfo=0';
-	 		var frameHTML = '<iframe style="width: ' + _getVideoSize().width + 'px;height: ' + _getVideoSize().height + 'px;" src="' + url + params + '" frameborder="0" allowfullscreen></iframe>';
-	 		return frameHTML;
+	 	getVideoFrame: function(videoUrl) {
+	 		var params = {
+	 			modestbranding:1,
+	 			autohide:1,
+	 			showinfo:0,
+	 			hd:1
+	 		};
+
+	 		if ( false==$.isEmptyObject(params) ) {
+	 			videoUrl += "?";
+	 			for(p in params) {
+	 				videoUrl += p + "=" + params[p] + "&";
+	 			}
+
+	 			videoUrl = videoUrl.substr(0,videoUrl.length-1);
+	 		}
+
+	 		return $("<iframe>", {
+	 			src: videoUrl,
+	 			frameborder: 0
+	 		});
 	 	}
-	 };
-	 var _getVideoSize = function() {
-	 	var h = parseInt($('#main').height());
-	 	// var vidH = Math.floor(((h - (h % 100))));
-	 	var vidH = h;
-	 	var vidW = Math.floor((350 / 219) * vidH);
-	 	return { height: vidH, width: vidW };
 	 };
 
 	 return {
 	 	Youtube: {
 	 		GetFrameHTML: function(url) {
-	 			return _YouTube.frameHTML(url);
+	 			return _YouTube.getVideoFrame(url);
 	 		}
 	 	}
 	 }

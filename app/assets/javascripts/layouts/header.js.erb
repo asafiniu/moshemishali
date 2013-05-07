@@ -1,5 +1,6 @@
 $(document).ready(function(e){
 	attachEvents();
+	$(".headerbuttons a.headerbutton[goto='home']").click();
 });
 attachEvents = function() {
 	$(document).resize(function(e){
@@ -10,8 +11,12 @@ attachEvents = function() {
 	});
 };
 hideAllButSection = function(sectionID) {
+	var target = $(".section#"+sectionID);
+	$(".headerbuttons a.headerbutton").removeClass("active");
+	$(".headerbuttons a.headerbutton[goto='"+sectionID+"']").addClass("active");
 	$(".section").hide();
 	$(".section#" + sectionID).show();
+	
 };
 preloadImage = function(imageUrl) {
 	if ( imageUrl && imageUrl.match(/jpg|png|gif/i)) {

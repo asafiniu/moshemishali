@@ -27,10 +27,12 @@ div#contact div.networks a {
 	background: url(<%= asset_path "buttons.png" %>);
 	text-decoration:none !important;
 	display:inline-block;
-	opacity:0.7
 }
 
-div#header div.headerbuttons a:hover,
+div#contact div.networks a {
+	opacity: 0.7;
+}
+
 div#contact div.networks a:hover {
 	opacity:1.0
 }
@@ -46,19 +48,19 @@ div#contact div.networks a {
 }
 
 div#header div.headerbuttons a.commercial {background-position: 0px 0px}
-div#header div.headerbuttons a.commercial:hover {background-position: 0px -26px}
+div#header div.headerbuttons a.commercial:hover, div#header div.headerbuttons a.commercial.active {background-position: 0px -26px}
 div#header div.headerbuttons a.films {background-position: 0px -52px}
-div#header div.headerbuttons a.films:hover {background-position: 0px -78px}
+div#header div.headerbuttons a.films:hover,div#header div.headerbuttons a.films.active {background-position: 0px -78px}
 div#header div.headerbuttons a.stills {background-position: 0px -104px}
-div#header div.headerbuttons a.stills:hover {background-position: 0px -130px}
+div#header div.headerbuttons a.stills:hover,div#header div.headerbuttons a.stills.active {background-position: 0px -130px}
 div#header div.headerbuttons a.contact {background-position: -114px 0px}
-div#header div.headerbuttons a.contact:hover {background-position: -114px -26px}
+div#header div.headerbuttons a.contact:hover,div#header div.headerbuttons a.contact.active {background-position: -114px -26px}
 div#header div.headerbuttons a.home {background-position: -113px -52px}
-div#header div.headerbuttons a.home:hover {background-position: -113px -78px}
+div#header div.headerbuttons a.home:hover, div#header div.headerbuttons a.home.active {background-position: -113px -78px}
 div#header div.headerbuttons a.filmography {background-position: -228px 0px}
-div#header div.headerbuttons a.filmography:hover {background-position: -228px -26px}
+div#header div.headerbuttons a.filmography:hover,div#header div.headerbuttons a.filmography.active {background-position: -228px -26px}
 div#header div.headerbuttons a.musicvideos {background-position: -227px -52px}
-div#header div.headerbuttons a.musicvideos:hover {background-position: -227px -78px}
+div#header div.headerbuttons a.musicvideos:hover,div#header div.headerbuttons a.musicvideos.active {background-position: -227px -78px}
 div#contact div.networks a.facebook {background-position: -71px -154px}
 div#contact div.networks a.linkedin {background-position: -36px -154px}
 div#contact div.networks a.gmail {background-position: 0px -154px}
@@ -126,7 +128,7 @@ div.filmography ul li span {
 }
 
 div.filmography,div.contact,div.films,div.stills {
-	color:Gray;
+	color:#afafaf;
 	font-size:12pt;
 	margin:5px auto 0;
 	overflow:scroll;
@@ -206,29 +208,34 @@ a.filmthumb {
 	vertical-align:top
 }
 
-.video-gallery {
-	background-color:#000;
-	color:#afafaf;
-	height:270px;
-	margin:40px auto 0;
-	width:1050px
+.video_gallery {
+	background-color: #000;
+	color: #afafaf;
+	height: 330px;
+	margin: 20px auto 0;
+	width: 100%
 }
 
-.video-gallery .slider {
+.video_gallery iframe {
+	height: 330px;
+	width: 528px
+}
+
+.video_gallery .slider {
 	height: inherit;
 	float: left;
 	width: 512px;
 	overflow: scroll
 }
 
-.video-gallery div.slider_single,
-.video-gallery img.video_thumbnail {
+.video_gallery div.slider_single,
+.video_gallery img.video_thumbnail {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	-webkit-border-radius: 10px
 }
 
-.video-gallery .slider_single {
+.video_gallery .slider_single {
 	cursor:pointer !important;
 	float:left;
 	width:498px;
@@ -237,25 +244,39 @@ a.filmthumb {
 	border-style: solid
 }
 
-.video-gallery .slider_single:hover {
+.video_gallery .slider_single:hover {
 	border-color: #afafaf
 }
 
-.video-gallery .slider_single img.video_thumbnail {
+.video_gallery .slider_single .arrow {
+	display:none;
+	width: 33px;
+	height: 33px;
+	background: url("/fancybox/source/fancybox_sprite.png") 0 -70px;
+	float: right;
+	margin-bottom: -33px;
+	margin-right: 3px
+}
+
+.video_gallery .slider_single:hover .arrow {
+	/*TURN ON IF ARROW IS IN USE: display:block*/
+}
+
+.video_gallery .slider_single img.video_thumbnail {
 	height:125px;
 	width:222px;
 	opacity:0.7
 }
 
-.video-gallery .slider_single:hover {
+.video_gallery .slider_single:hover {
 	border: 1px #afafaf solid
 }
 
-.video-gallery .slider_single:hover img.video_thumbnail {
+.video_gallery .slider_single:hover img.video_thumbnail {
 	opacity:1
 }
 
-.video-gallery .slider_single:hover .info {
+.video_gallery .slider_single:hover .info {
 	color: #fff
 }
 
@@ -264,32 +285,33 @@ a.filmthumb {
 	padding:10px
 }
 
-.video-gallery .vidframe {
+.video_gallery .vidframe {
 	float:right
 }
 
-.video-gallery .slider_single img.video_thumbnail {
+.video_gallery .slider_single img.video_thumbnail {
 	display:inline;
 	float:left
 }
 
-.video-gallery .slider_single .info {
+.video_gallery .slider_single .info {
 	float: right;
 	text-align: left;
 	width: 276px
 }
 
-.video-gallery .slider_single .info p {
-	margin-left: 5px
+.video_gallery .slider_single .info p {
+	margin-left: 5px;
+	margin-bottom: 0
 }
 
-div.video-gallery div.slider_single div.info p.title {
+div.video_gallery div.slider_single div.info p.title {
 	font-weight: bold;
 	font-size: 13pt !important;
 	margin-bottom: -10px !important
 }
 
-.video-gallery .inst_vidframe {
+.video_gallery .inst_vidframe {
 	display:block;
 	margin-top:40%
 }
