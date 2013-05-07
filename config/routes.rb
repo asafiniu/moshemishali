@@ -52,7 +52,7 @@ Moshemishali::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "pages#home"
-  get "/Index.aspx" => "pages#home"
+  get "/Index.aspx" => "pages#redirect_to_home"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
