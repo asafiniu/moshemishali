@@ -1,6 +1,6 @@
 body {
 	background-color:#000;
-	color:Gray;
+	color:#afafaf;
 	font:12pt "times new roman", arial;
 	overflow-x:hidden
 }
@@ -9,29 +9,30 @@ div#header {
 	background-image:url(<%=asset_path"top.jpg"%>);
 	background-position:top;
 	background-repeat:no-repeat;
-	background-size: 100%;
+	background-size:100%;
 	display:block;
 	min-height:190px;
 	width:100%
 }
 
 div#header div.headerbuttons {
-	width: 801px;
 	height:23px;
 	margin:0 auto;
 	position:relative;
-	top:150px
+	top:150px;
+	width:801px
 }
 
-div#header div.headerbuttons a,
-div#contact div.networks a {
-	background: url(<%= asset_path "buttons.png" %>);
-	text-decoration:none !important;
+div#header div.headerbuttons a,div#contact div.networks a {
+	background:url(<%=asset_path"buttons.png"%>);
 	display:inline-block;
+	text-decoration:none!important
 }
 
 div#contact div.networks a {
-	opacity: 0.7;
+	height:30px;
+	opacity:0.7;
+	width:30px
 }
 
 div#contact div.networks a:hover {
@@ -43,37 +44,81 @@ div#header div.headerbuttons a {
 	width:111px
 }
 
-div#contact div.networks a {
-	height:30px;
-	width:30px
+div#header div.headerbuttons a.commercial {
+	background-position:0 0
 }
 
-div#header div.headerbuttons a.commercial {background-position: 0px 0px}
-div#header div.headerbuttons a.commercial:hover, div#header div.headerbuttons a.commercial.active {background-position: 0px -26px}
-div#header div.headerbuttons a.films {background-position: 0px -52px}
-div#header div.headerbuttons a.films:hover,div#header div.headerbuttons a.films.active {background-position: 0px -78px}
-div#header div.headerbuttons a.stills {background-position: 0px -104px}
-div#header div.headerbuttons a.stills:hover,div#header div.headerbuttons a.stills.active {background-position: 0px -130px}
-div#header div.headerbuttons a.contact {background-position: -114px 0px}
-div#header div.headerbuttons a.contact:hover,div#header div.headerbuttons a.contact.active {background-position: -114px -26px}
-div#header div.headerbuttons a.home {background-position: -113px -52px}
-div#header div.headerbuttons a.home:hover, div#header div.headerbuttons a.home.active {background-position: -113px -78px}
-div#header div.headerbuttons a.filmography {background-position: -228px 0px}
-div#header div.headerbuttons a.filmography:hover,div#header div.headerbuttons a.filmography.active {background-position: -228px -26px}
-div#header div.headerbuttons a.musicvideos {background-position: -227px -52px}
-div#header div.headerbuttons a.musicvideos:hover,div#header div.headerbuttons a.musicvideos.active {background-position: -227px -78px}
-div#contact div.networks a.facebook {background-position: -71px -154px}
-div#contact div.networks a.linkedin {background-position: -36px -154px}
-div#contact div.networks a.gmail {background-position: 0px -154px}
+div#header div.headerbuttons a.commercial:hover,div#header div.headerbuttons a.commercial.active {
+	background-position:0 -26px
+}
+
+div#header div.headerbuttons a.films {
+	background-position:0 -52px
+}
+
+div#header div.headerbuttons a.films:hover,div#header div.headerbuttons a.films.active {
+	background-position:0 -78px
+}
+
+div#header div.headerbuttons a.stills {
+	background-position:0 -104px
+}
+
+div#header div.headerbuttons a.stills:hover,div#header div.headerbuttons a.stills.active {
+	background-position:0 -130px
+}
+
+div#header div.headerbuttons a.contact {
+	background-position:-114px 0
+}
+
+div#header div.headerbuttons a.contact:hover,div#header div.headerbuttons a.contact.active {
+	background-position:-114px -26px
+}
+
+div#header div.headerbuttons a.home {
+	background-position:-113px -52px
+}
+
+div#header div.headerbuttons a.home:hover,div#header div.headerbuttons a.home.active {
+	background-position:-113px -78px
+}
+
+div#header div.headerbuttons a.filmography {
+	background-position:-228px 0
+}
+
+div#header div.headerbuttons a.filmography:hover,div#header div.headerbuttons a.filmography.active {
+	background-position:-228px -26px
+}
+
+div#header div.headerbuttons a.musicvideos {
+	background-position:-227px -52px
+}
+
+div#header div.headerbuttons a.musicvideos:hover,div#header div.headerbuttons a.musicvideos.active {
+	background-position:-227px -78px
+}
+
+div#contact div.networks a.facebook {
+	background-position:-71px -154px
+}
+
+div#contact div.networks a.linkedin {
+	background-position:-36px -154px
+}
+
+div#contact div.networks a.gmail {
+	background-position:0 -154px
+}
 
 div#main {
 	margin:0 auto
 }
 
-div.filmography,
-div.films {
-	margin-top: 10px !important;
-	height:290px
+div.filmography,div.films {
+	height:290px;
+	margin-top:10px!important
 }
 
 div.pageheader,div.filmography div.sectionheader,div.filmography ul li span {
@@ -81,40 +126,30 @@ div.pageheader,div.filmography div.sectionheader,div.filmography ul li span {
 }
 
 div.pageheader {
+	display:none;
 	font-size:30pt;
-	margin:20px auto 0 10%;
-	display:none
+	margin:20px auto 0 10%
 }
 
-div.contact .addresses .pageheader,
-div.contact .networks .pageheader {
-	margin-top: 0 !important;
-	margin-left: 0 !important;
-	display:block
+div.contact .addresses .pageheader,div.contact .networks .pageheader {
+	display:block;
+	margin-left:0!important;
+	margin-top:0!important
 }
 
 div.contact .networks .pageheader {
-	margin-bottom: 20px !important
+	margin-bottom:20px!important
 }
 
-div.contact .addresses,
-div.contact .networks {
-	width: 400px;
-	float:left
-}
-
-div.contact .networks {
-	float:right
+div.contact .addresses,div.contact .networks {
+	float:left;
+	width:400px
 }
 
 div.contact .networks a img {
-	width: 30px;
-	height: 30px;
-	opacity:0.8
-}
-
-div.contact .networks a:hover img {
-	opacity:1
+	height:30px;
+	opacity:0.8;
+	width:30px
 }
 
 div.filmography div.sectionheader {
@@ -140,8 +175,8 @@ div.filmography,div.contact,div.films,div.stills {
 }
 
 div.stills {
-	margin: 50px 165px;
-	font-size: 30pt
+	font-size:30pt;
+	margin:50px 165px
 }
 
 div.films img {
@@ -187,11 +222,6 @@ div.films a:not(.soon) img {
 	width:400px
 }
 
-.videodetails .vidout {
-	text-align:justify;
-	vertical-align:top
-}
-
 a.filmthumb {
 	text-decoration:none
 }
@@ -204,81 +234,66 @@ a.filmthumb {
 	padding:6px
 }
 
-.hometable {
-	text-align:justify;
-	vertical-align:top
-}
-
 .video_gallery {
-	background-color: #000;
-	color: #afafaf;
-	height: 330px;
-	margin: 20px auto 0;
-	width: 100%
+	background-color:#000;
+	color:#afafaf;
+	height:330px;
+	margin:20px auto 0;
+	width:100%
 }
 
 .video_gallery iframe {
-	height: 330px;
-	width: 528px
+	height:330px;
+	width:528px
 }
 
 .video_gallery .slider {
-	height: inherit;
-	float: left;
-	width: 512px;
-	overflow: scroll
+	float:left;
+	height:inherit;
+	overflow:scroll;
+	width:512px
 }
 
-.video_gallery div.slider_single,
-.video_gallery img.video_thumbnail {
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-border-radius: 10px
+.video_gallery div.slider_single,.video_gallery img.video_thumbnail {
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px
 }
 
 .video_gallery .slider_single {
-	cursor:pointer !important;
+	border-color:#000;
+	border-style:solid;
+	border-width:1px;
+	cursor:pointer!important;
 	float:left;
-	width:498px;
-	border-width: 1px;
-	border-color: #000;
-	border-style: solid
+	width:498px
 }
 
 .video_gallery .slider_single:hover {
-	border-color: #afafaf
+	border:1px #afafaf solid;
+	border-color:#afafaf
 }
 
 .video_gallery .slider_single .arrow {
+	background:url(/fancybox/source/fancybox_sprite.png) 0 -70px;
 	display:none;
-	width: 33px;
-	height: 33px;
-	background: url("/fancybox/source/fancybox_sprite.png") 0 -70px;
-	float: right;
-	margin-bottom: -33px;
-	margin-right: 3px
-}
-
-.video_gallery .slider_single:hover .arrow {
-	/*TURN ON IF ARROW IS IN USE: display:block*/
+	float:right;
+	height:33px;
+	margin-bottom:-33px;
+	margin-right:3px;
+	width:33px
 }
 
 .video_gallery .slider_single img.video_thumbnail {
+	display:inline;
+	float:left;
 	height:125px;
-	width:222px;
-	opacity:0.7
-}
-
-.video_gallery .slider_single:hover {
-	border: 1px #afafaf solid
-}
-
-.video_gallery .slider_single:hover img.video_thumbnail {
-	opacity:1
+	opacity:0.7;
+	width:222px
 }
 
 .video_gallery .slider_single:hover .info {
-	color: #fff
+	color:#fff
 }
 
 .video_gallery .vidframe.commercial,.video_gallery .vidframe.music_video {
@@ -286,30 +301,21 @@ a.filmthumb {
 	padding:10px
 }
 
-.video_gallery .vidframe {
-	float:right
-}
-
-.video_gallery .slider_single img.video_thumbnail {
-	display:inline;
-	float:left
-}
-
 .video_gallery .slider_single .info {
-	float: right;
-	text-align: left;
-	width: 276px
+	float:right;
+	text-align:left;
+	width:276px
 }
 
 .video_gallery .slider_single .info p {
-	margin-left: 5px;
-	margin-bottom: 0
+	margin-bottom:0;
+	margin-left:5px
 }
 
 div.video_gallery div.slider_single div.info p.title {
-	font-weight: bold;
-	font-size: 13pt !important;
-	margin-bottom: -10px !important
+	font-size:13pt!important;
+	font-weight:700;
+	margin-bottom:-10px!important
 }
 
 .video_gallery .inst_vidframe {
@@ -327,7 +333,7 @@ div#footer {
 	background-image:url(<%=asset_path"bottom.jpg"%>);
 	background-position:top;
 	background-repeat:no-repeat;
-	background-size: 100%;
+	background-size:100%;
 	bottom:0;
 	color:#afafaf;
 	min-height:110px;
@@ -346,24 +352,35 @@ div#footer span.footertext {
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width:10px
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius:10px
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	background: rgba(175,175,175,1);
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+	-webkit-border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
+	background:rgba(175,175,175,1);
+	border-radius:10px
 }
 
-::-webkit-scrollbar-corner       {
-	background: #000
+::-webkit-scrollbar-corner {
+	background:#000
+}
+
+div.contact .networks,.video_gallery .vidframe {
+	float:right
+}
+
+div.contact .networks a:hover img,.video_gallery .slider_single:hover img.video_thumbnail {
+	opacity:1
+}
+
+.videodetails .vidout,.hometable {
+	text-align:justify;
+	vertical-align:top
 }
