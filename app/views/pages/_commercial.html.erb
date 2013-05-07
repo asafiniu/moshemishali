@@ -1,6 +1,6 @@
 <div class="pageheader">Commercial</div>
 <div class="video-gallery">
-    <div class="jqueryslider manual vertical" id="slider_com">
+    <div class="slider" id="slider_com">
         <% Video.by_type("commercial").each do |com| %>
         <div class="slider_single">
             <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
