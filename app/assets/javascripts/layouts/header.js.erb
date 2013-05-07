@@ -4,7 +4,12 @@ $(document).ready(function(e){
 });
 attachEvents = function() {
 	$(document).resize(function(e){
-		$("#main").width(window.screen.availWidth-150)
+		if ( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+
+		}
+		else {
+			$("#main").width(window.screen.availWidth-150)
+		}
 	}).resize();
 	$(".headerbuttons a.headerbutton").on("click", function(e){
 		hideAllButSection($(e.target).attr("goto").toLowerCase());
