@@ -1,92 +1,100 @@
 class VideosController < ApplicationController
-  # # GET /videos
-  # # GET /videos.json
-  # def index
-  #   @videos = Video.all
+  before_filter :verify_admin, :only => [:index]
 
-  #   respond_to do |format|
-  #     format.json { render json: @videos }
-  #   end
-  # end
+  @@ADMIN_PASS = "44353261"
 
-  # # GET /videos/1
-  # # GET /videos/1.json
-  # def show
-  #   response_hash = {}
-  #   begin
-  #     @video = Video.find(params[:id]) 
-  #   rescue Exception => e
-  #     response_hash[:error] = e.to_s
-  #   end
+  # GET /videos
+  # GET /videos.json
+  def index
+    @videos = Video.all.select{|v| v.is_visible}
 
-  #   if !response_hash[:error]
-  #     response_hash[:video] = @video
-  #   end
+    respond_to do |format|
+      format.html { render :layout => false } #index.html.erb
+      format.json { render json: @videos }
+    end
+  end
 
-  #   respond_to do |format|
-  #     # format.html #show.html.erb
-  #     format.html { redirect_to '/videos' }
-  #     format.json { render json: response_hash } 
-  #   end
-  # end
+  # GET /videos/1
+  # GET /videos/1.json
+  def show
+    @video = Video.find(params[:id]) 
 
-  # # GET /videos/new
-  # # GET /videos/new.json
-  # def new
-  #   @video = Video.new
+    respond_to do |format|
+      format.html { render :layout => false } #show.html.erb
+      format.json { render json: @video } 
+    end
+  end
 
-  #   respond_to do |format|
-  #     format.html # new.html.erb
-  #     format.json { render json: @video }
-  #   end
-  # end
+  # GET /videos/new
+  # GET /videos/new.json
+  def new
+    @video = Video.new
 
-  # # GET /videos/1/edit
-  # def edit
-  #   @video = Video.find(params[:id])
-  # end
+    respond_to do |format|
+      format.html { render :layout => false } # new.html.erb
+      format.json { render json: @video }
+    end
+  end
 
-  # # POST /videos
-  # # POST /videos.json
-  # def create
-  #   @video = Video.new(params[:video])
+  # GET /videos/1/edit
+  def edit
+    @video = Video.find(params[:id])
+  end
 
-  #   respond_to do |format|
-  #     if @video.save
-  #       format.html { redirect_to @video, notice: 'Video was successfully created.' }
-  #       format.json { render json: @video, status: :created, location: @video }
-  #     else
-  #       format.html { render action: "new" }
-  #       format.json { render json: @video.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  # POST /videos
+  # POST /videos.json
+  def create
+    @video = Video.new(params[:video])
 
-  # # PUT /videos/1
-  # # PUT /videos/1.json
-  # def update
-  #   @video = Video.find(params[:id])
+    respond_to do |format|
+      if @video.save
+        format.html { redirect_to @video, notice: 'Video was successfully created.' }
+        format.json { render json: @video, status: :created, location: @video }
+      else
+        format.html { render action: "new", :layout => false }
+        format.json { render json: @video.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-  #   respond_to do |format|
-  #     if @video.update_attributes(params[:video])
-  #       format.html { redirect_to @video, notice: 'Video was successfully updated.' }
-  #       format.json { head :no_content }
-  #     else
-  #       format.html { render action: "edit" }
-  #       format.json { render json: @video.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  # PUT /videos/1
+  # PUT /videos/1.json
+  def update
+    @video = Video.find(params[:id])
 
-  # # DELETE /videos/1
-  # # DELETE /videos/1.json
-  # def destroy
-  #   @video = Video.find(params[:id])
-  #   @video.destroy
+    respond_to do |format|
+      if @video.update_attributes(params[:video])
+        format.html { redirect_to "/videos?p=" + @@ADMIN_PASS }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @video.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-  #   respond_to do |format|
-  #     format.html { redirect_to videos_url }
-  #     format.json { head :no_content }
-  #   end
-  # end
+  # DELETE /videos/1
+  # DELETE /videos/1.json
+  def destroy
+    @video = Video.find(params[:id])
+    # @video.destroy
+
+    @video.is_visible = false
+
+    respond_to do |format|
+      if @video.save
+        format.html { redirect_to "/videos?p=" + @@ADMIN_PASS }
+        format.json { render json: {:video => @video.to_json}  }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @video.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def verify_admin
+    if params[:p] != @@ADMIN_PASS
+      redirect_to :root
+    end
+  end
 end

@@ -1,0 +1,33 @@
+$(document).ready(function(e){
+	attachEvents();
+});
+attachEvents = function() {
+	$("td a.index_action.edit").on("click", function(e){
+		var id = $(this).parents("tr.data").attr("id");
+		$("tr.data_edit").hide();
+		$("tr.data_edit[id='"+id+"']").toggle(2000);
+	});
+	$("td a.index_action.delete").on("click", function(e){
+		var id = $(this).parents("tr.data").attr("id");
+		if ( confirm("Are you sure you want to delete this video?")) {
+			var params = {
+				url: "/videos/" + id + ".json",
+				dataType: "json",
+				type: "DELETE",
+				processData: false,
+				contentType: "application/json",
+				error: function (xhr, status, error) {
+					alert("Something happened. Please refresh and try again");
+				},
+				success: function (xhr, status) {
+					if ( status == "success" && xhr.video ) {
+						var video = JSON.parse(xhr.video);
+						$("tr[id='"+id+"']").fadeOut(1000);				
+					}
+				}
+			};
+			window.p = params;
+			$.ajax(params);
+		}
+	});
+}

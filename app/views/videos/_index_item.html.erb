@@ -1,0 +1,61 @@
+<tr <%= ("id=" + video.id.to_s) if part != 'header' %> class="<%= part %><%= " " + video.typename if part != 'header' %>">
+  <% if part == "header" %>
+  <th>Type</th>
+  <th>Image URL</th>
+  <th>Title</th>
+  <th>Description</th>
+  <th>Url</th>
+  <th>Edit</th>
+  <th>Remove</th>
+  <% elsif part == "data" %>
+  <td><%= video.typename.capitalize %></td>
+  <td>
+    <% if video.image_url %>
+    <%= link_to image_tag(asset_path(video.image_url), :border => 0, :class => 'video_thumbnail index_item'), asset_path(video.image_url), :target => "_blank", :title => "" %>
+    <% end %>
+  </td>
+  <td><%= video.title %></td>
+  <td>
+    <% if video.description and video.description.size > 40 %>
+    <%= video.description.to_s[0..40] + "..." %>
+    <% else %>
+    <%= video.description %>
+    <% end %>
+  </td>
+  <td>
+    <% if video.url %>
+    <%= link_to image_tag(asset_path("youtube_button.png"), :class => "youtube_button"), "http://www.youtube.com/watch?v=" + video.url.split("/embed/").last, :target => "_blank", :title => "Open in YouTube" %>
+    <% end %>
+  </td>
+  <!-- <td><%= link_to 'Show', video %></td> -->
+  <!-- <td><%= link_to "", edit_video_path(video), :class => "index_action edit", :title => "Edit Video Details" %></td> -->
+  <td><%= link_to "", "javascript:void(0);", :class => "index_action edit", :title => "Edit Video Details" %></td>
+  <td><%= link_to "", "javascript:void(0);", :class => "index_action delete", :title => "Hide Video from list" %></td>
+</tr>
+<tr class="data_edit" id="<%= video.id %>">
+  <%= form_for(video, :remote => true) do |f| %>
+  <td class="field">
+    <%= video.typename.capitalize %>
+  </td>
+  <td class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </td>
+  <td class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </td>
+  <td class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </td>
+  <td class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </td>
+  <td class="actions">
+    <%= f.submit "Save" %>
+  </td>
+  <% end %>
+  <% end %>
+</tr>
