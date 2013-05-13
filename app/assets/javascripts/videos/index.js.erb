@@ -1,7 +1,7 @@
 $(document).ready(function(e){
-	attachEvents();
+	attachAdminPageEvents();
 });
-attachEvents = function() {
+attachAdminPageEvents = function() {
 	$("td a.index_action.edit").on("click", function(e){
 		var id = $(this).parents("tr.data").attr("id");
 		$("tr.data_edit").hide();
