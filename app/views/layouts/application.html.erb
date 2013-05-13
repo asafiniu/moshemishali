@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Moshe Mishali - Director of Photography</title>
 	<!-- Scripts -->
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
 	<%= javascript_include_tag "application" %>
-	<!-- META Content -->
-	<title>Moshe Mishali - Director of Photography</title>
-	<meta property="og:title" content="Moshe Mishali - Director of Photography" /> 
-	<meta property="og:url" content="http://www.moshemishali.com" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="director" />
-	<meta property="og:description" content="Moshe Mishali's reel - films, commercials and music videos." /> 
-	<meta property="og:image" content="<%= asset_path 'reel_16.png' %>" />
+	<%= render :partial => "layouts/metadata" %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
