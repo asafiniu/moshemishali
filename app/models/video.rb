@@ -3,10 +3,10 @@ class Video < ActiveRecord::Base
 
 	def is_valid
 		valid = false
-		if self.typename =~ /music_video|film|commercial/
-			valid = (nil != (self.image_url =~ /jpg|png|gif/))
-		elsif self.typename =~ /filmography/
+		if self.typename =~ /filmography/
 			valid = true
+		elsif self.typename =~ /music_video|film|commercial/
+			valid = (nil != (self.image_url =~ /jpg|png|gif/))
 		end
 
 		return valid
