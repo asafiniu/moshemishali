@@ -12,6 +12,10 @@ class Video < ActiveRecord::Base
 		return valid
 	end
 
+	def self.invalids
+		Video.all.select{|v| !v.is_valid}
+	end
+
 	def self.by_type(typename)
 		Video.where("typename = ?",typename).order("created_at DESC")
 	end
