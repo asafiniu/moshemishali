@@ -1,6 +1,17 @@
 class Video < ActiveRecord::Base
 	attr_accessible :description, :title, :url, :typename, :image_url
 
+	def is_valid
+		valid = false
+		if self.typename =~ /music_video|film|commercial/
+			valid = (nil != (self.image_url =~ /jpg|png|gif/))
+		elsif self.typename =~ /filmography/
+			valid = true
+		end
+
+		return valid
+	end
+
 	def self.by_type(typename)
 		Video.where("typename = ?",typename).order("created_at DESC")
 	end

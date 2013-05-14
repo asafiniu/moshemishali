@@ -10,7 +10,7 @@
   <% elsif part == "data" %>
   <td><%= video.typename.capitalize %></td>
   <td>
-    <% if video.image_url %>
+    <% if video.image_url and video.image_url.size > 0 %>
     <%= link_to image_tag(asset_path(video.image_url), :border => 0, :class => 'video_thumbnail index_item'), asset_path(video.image_url), :target => "_blank", :title => "" %>
     <% end %>
   </td>
