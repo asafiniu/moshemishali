@@ -12,26 +12,26 @@
 <% end %>
 
 <div class="field">
-  <%= f.label :typename %><br />
-  <%= select_tag(:typename, options_for_select([["music video", "music_video"], ["commercial", "commercial"],["film", "film"]])) %>
+  <%= f.label :typename %>
+  <%= select_tag(:typename, options_for_select([["Music Video", "music_video"], ["Commercial", "commercial"],["Film", "film"]])) %>
 </div>
 <div class="field">
-  <%= f.label :image_url %><br>
-  <%= f.text_field :image_url %>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url, :placeholder => "Link to an image (i.e. http://www.moshemishali.com/logo.jpg)" %>
 </div>
 <div class="field">
-  <%= f.label :title %><br />
-  <%= f.text_field :title %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :placeholder => "Name of the video" %>
 </div>
 <div class="field">
-  <%= f.label :description %><br />
-  <%= f.text_area :description %>
+  <%= f.label :description %>
+  <%= f.text_area :description, :rows => "5", :placeholder => "The line below the video (i.e. 'Directed by...')" %>
 </div>
 <div class="field">
-  <%= f.label :url %><br />
-  <%= f.text_field :url %>
+  <%= f.label :url %>
+  <%= f.text_field :url, :placeholder => "Video embed URL: http://www.youtube-nocookie.com/embed/<Video ID>" %>
 </div>
 <div class="actions">
-  <%= f.submit "Create" %>
+  <%= f.submit "Create", :id => "save" %>
 </div>
 <% end %>

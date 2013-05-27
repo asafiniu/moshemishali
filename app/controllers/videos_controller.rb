@@ -46,13 +46,13 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(params[:video])
 
-    if !video.image_url and video.url =~ /youtube/
-      video.image_url = "http://img.youtube.com/vi/" + video.url.split("/embed/").last + "/default.jpg"
+    if !@video.image_url and @video.url =~ /youtube/
+      @video.image_url = "http://img.youtube.com/vi/" + @video.url.split("/embed/").last + "/default.jpg"
     end
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
+        format.html { redirect_to "/videos?p=" + @@ADMIN_PASS }
         format.json { render json: @video, status: :created, location: @video }
       else
         format.html { render action: "new", :layout => false }

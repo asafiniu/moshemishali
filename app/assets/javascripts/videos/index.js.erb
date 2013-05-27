@@ -5,7 +5,7 @@ attachAdminPageEvents = function() {
 	$("td a.index_action.edit").on("click", function(e){
 		var id = $(this).parents("tr.data").attr("id");
 		$("tr.data_edit").hide();
-		$("tr.data_edit[id='"+id+"']").toggle(2000);
+		$("tr.data_edit[id='" + id + "']").toggle(2000);
 	});
 	$("td a.index_action.delete").on("click", function(e){
 		var id = $(this).parents("tr.data").attr("id");

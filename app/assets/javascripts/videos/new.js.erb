@@ -1,0 +1,70 @@
+String.prototype.capitalize = function() {
+	if ( this && this.length > 0 ) {
+		return this.charAt(0).toUpperCase() + this.slice(1)
+	}
+}
+$(document).ready(function(e){
+	if ( $("form").length ) {
+		attachFormEvents();
+		$("input#save").attr("disabled","disabled");
+		$("#video_url,#video_title,#video_description,#video_image_url").trigger("change");	
+	}
+});
+attachFormEvents = function() {
+	$("#video_url,#video_title,#video_description,#video_image_url")
+	.on("change", onChange);
+};
+onChange = function(e, stop) {
+	$("input#save").removeAttr("disabled");
+	var err = checkForError(e.target.id, e.target.value);
+	if (err) {
+		error(err);
+		$(this).focus().select();
+		$("input#save").attr("disabled","disabled");
+	}
+	else {
+		$("span.error[target='" + e.target.id + "']").remove();
+		if (!checkForError("all")) {
+			$("input#save").removeAttr("disabled");
+		}
+		else if (!stop) {
+			onChange(e, true);
+		}
+	}
+};
+checkForError = function(id, value) {
+	var valid = false;
+	var errMessage = "";
+	switch(id){
+		case "video_title":
+		case "video_description":
+		case "video_url":
+		valid = (value.length > 0);
+		errMessage = id.replace("video_","").capitalize() + " cannot be empty.";
+		break;
+		case "video_image_url":
+		valid = isImageURL(value);
+		errMessage = "Image URL must be a valid link to an image.";
+		break;
+		case "all":
+		valid = ($("#video_url").val() != "" && 
+			$("#video_title").val() != "" && 
+			$("#video_description").val() != "" &&
+			$("#video_image_url").val() != "" &&
+			isImageURL($("#video_image_url").val()));
+		break;
+		default:
+		break;
+	}
+
+	return valid ? null : {msg:errMessage, id: id, value: value};
+};
+isImageURL = function(url) {
+	return url && null != url.match(/(http?:\/\/.*\.(?:png|jpg|gif))/i)
+}
+error = function(err) {
+	if ( err && err.id && $("#" + err.id).length > 0 ) {
+		$("span.error[target='" + err.id + "']").remove();
+		$("#" + err.id).after($("<span>",{target:err.id}).text(err.msg).addClass("error"));
+	}
+};
