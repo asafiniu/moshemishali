@@ -6,7 +6,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all.select{|v| v.is_visible and v.is_valid}
+    @videos = Video.all.select{|v| v.is_visible and v.is_valid}.sort_by{|v| v[:created_at]}.reverse
 
     respond_to do |format|
       format.html { render :layout => false } #index.html.erb
