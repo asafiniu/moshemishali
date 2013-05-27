@@ -16,6 +16,10 @@
   <%= select_tag(:typename, options_for_select([["Music Video", "music_video"], ["Commercial", "commercial"],["Film", "film"]])) %>
 </div>
 <div class="field">
+  <%= f.label :url %>
+  <%= f.text_field :url, :placeholder => "Video embed URL: http://www.youtube-nocookie.com/embed/<Video ID>" %>
+</div>
+<div class="field">
   <%= f.label :image_url %>
   <%= f.text_field :image_url, :placeholder => "Link to an image (i.e. http://www.moshemishali.com/logo.jpg)" %>
 </div>
@@ -26,10 +30,6 @@
 <div class="field">
   <%= f.label :description %>
   <%= f.text_area :description, :rows => "5", :placeholder => "The line below the video (i.e. 'Directed by...')" %>
-</div>
-<div class="field">
-  <%= f.label :url %>
-  <%= f.text_field :url, :placeholder => "Video embed URL: http://www.youtube-nocookie.com/embed/<Video ID>" %>
 </div>
 <div class="actions">
   <%= f.submit "Create", :id => "save" %>

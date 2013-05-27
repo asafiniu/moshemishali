@@ -2,6 +2,16 @@ String.prototype.capitalize = function() {
 	if ( this && this.length > 0 ) {
 		return this.charAt(0).toUpperCase() + this.slice(1)
 	}
+};
+Array.prototype.last = function() {
+	if ( this && this.length > 0 ) {
+		return this[this.length-1];
+	}
+};
+Array.prototype.first = function() {
+	if ( this && this.length > 0 ) {
+		return this[0];
+	}	
 }
 $(document).ready(function(e){
 	if ( $("form").length ) {
@@ -15,6 +25,14 @@ attachFormEvents = function() {
 		$("h1").text("New " + e.target.value.replace("_","").capitalize());
 	});
 	$("#video_url,#video_title,#video_description,#video_image_url").on("change", onChange);
+	$("#video_url").on("change", function(e){
+		if ( e.target.value.match("youtube") && $("#video_image_url").val().length == 0 ) {
+			var videoId = e.target.value.split("/embed/").last();
+			if ( videoId ) {
+				$("#video_image_url").val("http://img.youtube.com/vi/" + videoId + "/default.jpg");
+			}
+		}
+	});
 };
 onChange = function(e, stop) {
 	$("input#save").removeAttr("disabled");
