@@ -12,7 +12,7 @@ $(document).ready(function(e){
 });
 attachFormEvents = function() {
 	$("#typename").on("change", function(e){
-		$("h1").text("New " + e.target.value);
+		$("h1").text("New " + e.target.value.replace("_","").capitalize());
 	});
 	$("#video_url,#video_title,#video_description,#video_image_url").on("change", onChange);
 };
