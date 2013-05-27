@@ -24,6 +24,13 @@
     <% end %>
   </td>
   <td>
+    <% if video.synopsis and video.synopsis.size > 40 %>
+    <%= video.synopsis.to_s[0..40] + "..." %>
+    <% else %>
+    <%= video.synopsis %>
+    <% end %>
+  </td>
+  <td>
     <% if video.url %>
     <%= link_to image_tag(asset_path("youtube_button.png"), :class => "youtube_button"), "http://www.youtube.com/watch?v=" + video.url.split("/embed/").last, :target => "_blank", :title => "Open in YouTube" %>
     <% end %>
