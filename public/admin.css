@@ -1,0 +1,12 @@
+table.index_table {background:#000;color:#afafaf;cursor:default;margin:0 auto;width:100%}
+table.index_table tr.header {background:#ec8;color:#000}
+table.index_table tr.data {border:#000 1px solid}
+table.index_table tr td {text-align:center}
+table.index_table a {opacity:0.7}
+table.index_table a:hover {opacity:1!important}
+table.index_table tr.data:hover * {border-color:#FFF;color:#FFF}
+table.index_table tr a.index_action{background:url(<%=asset_path"index_actions.png"%>);display:block;height:30px;margin:0 auto;width:22px}
+table.index_table tr a.index_action.edit {background-position:-26px 0}
+img.video_thumbnail.index_item {height:62px;width:111px}
+img.youtube_button {height:40px;width:40px}
+tr.data_edit {background:#707070;display:none}

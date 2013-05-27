@@ -1,38 +1,35 @@
 .field label {
-	min-width: 100px;
-	display: inline-block;
-	vertical-align: top
+display:inline-block;
+min-width:100px;
+vertical-align:top
 }
 
-div.actions,
-div.actions div.field {
-	width: 600px;
-	text-align:center
+div.actions,div.actions div.field {
+text-align:center;
+width:600px
 }
 
 div.actions {
-	margin-top: 30px;
+margin-top:30px
 }
 
-form select,
-form input,
-form textarea {
-	width: 441px
+form select,form input,form textarea {
+width:441px
 }
 
 div.actions input#save {
-	margin: 0 auto;
-	width: 135px;
-	height: 32px;
-	font: 18pt sans-serif bold
+font:18pt sans-serif bold;
+height:32px;
+margin:0 auto;
+width:135px
 }
 
 a[href^="/videos"] {
-	display:none
+display:none
 }
 
 span.error {
-	color: red;
-	margin-left: 8px;
-	font-weight: 700
+color:red;
+font-weight:700;
+margin-left:8px
 }
