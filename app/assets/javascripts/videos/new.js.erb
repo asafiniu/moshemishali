@@ -29,7 +29,7 @@ attachFormEvents = function() {
 		if ( e.target.value.match("youtube") && $("#video_image_url").val().length == 0 ) {
 			var videoId = e.target.value.split("/embed/").last();
 			if ( videoId ) {
-				$("#video_image_url").val("http://img.youtube.com/vi/" + videoId + "/default.jpg");
+				$("#video_image_url").val("http://img.youtube.com/vi/" + videoId + "/default.jpg").trigger("change");
 			}
 		}
 	});
