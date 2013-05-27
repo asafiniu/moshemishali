@@ -11,8 +11,10 @@ $(document).ready(function(e){
 	}
 });
 attachFormEvents = function() {
-	$("#video_url,#video_title,#video_description,#video_image_url")
-	.on("change", onChange);
+	$("#typename").on("change", function(e){
+		$("h1").text("New " + e.target.value);
+	});
+	$("#video_url,#video_title,#video_description,#video_image_url").on("change", onChange);
 };
 onChange = function(e, stop) {
 	$("input#save").removeAttr("disabled");
