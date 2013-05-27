@@ -13,7 +13,7 @@
 
 <div class="field">
   <%= f.label :typename %>
-  <%= select_tag(:typename, options_for_select([["Music Video", "music_video"], ["Commercial", "commercial"],["Film", "film"]])) %>
+  <%= f.select(:typename, [["Music Video", "music_video"], ["Commercial", "commercial"],["Film", "film"]]) %>
 </div>
 <div class="field">
   <%= f.label :url %>
