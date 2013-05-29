@@ -1,386 +1,375 @@
 body {
-background-color:#000;
-color:#afafaf;
-font:12pt "times new roman", arial;
-overflow-x:hidden
+	background-color:#000;
+	color:#afafaf;
+	font:12pt "times new roman", arial;
+	overflow-x:hidden
 }
 
 div#header {
-background-image:url(<%=asset_path"top.jpg"%>);
-background-position:top;
-background-repeat:no-repeat;
-background-size:100%;
-display:block;
-min-height:190px;
-width:100%
+	background-image:url(<%=asset_path"top.jpg"%>);
+	background-position:top;
+	background-repeat:no-repeat;
+	background-size:100%;
+	display:block;
+	min-height:190px;
+	width:100%
 }
 
 div#header div.headerbuttons {
-height:23px;
-margin:0 auto;
-position:relative;
-top:150px;
-width:801px
-}
-
-div#header div.headerbuttons a,div#contact div.networks a {
-background:url(<%=asset_path"buttons.png"%>);
-display:inline-block;
-text-decoration:none!important
+	height:23px;
+	margin:0 auto;
+	position:relative;
+	top:150px;
+	width:801px
 }
 
 div#contact div.networks a {
-height:30px;
-opacity:0.7;
-width:30px
+	background:url(<%=asset_path"buttons.png"%>)
 }
 
-div#contact div.networks a:hover {
-opacity:1.0
+div#header div.headerbuttons a,div#contact div.networks a {
+	display:inline-block;
+	text-decoration:none!important
 }
 
 div#header div.headerbuttons a {
-height:23px;
-width:111px
+	-webkit-box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+	-khtml-box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+	-moz-box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+	-ms-box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+	-o-box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+	box-shadow: rgba(0,0,0,0.2) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+	height:23px;
+	width:111px;
+	background: #2f2f2f; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #2f2f2f 0%, #828c95 100%, #28343b 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#2f2f2f), color-stop(100%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #2f2f2f 0%,#828c95 100%,#28343b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #2f2f2f 0%,#828c95 100%,#28343b 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #2f2f2f 0%,#828c95 100%,#28343b 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #2f2f2f 0%,#828c95 100%,#28343b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2f2f', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-div#header div.headerbuttons a.commercial {
-background-position:0 0
+div#header div.headerbuttons a:hover,
+div#header div.headerbuttons a.active {
+	background: #828c95; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #828c95 0%, #2f2f2f 100%, #28343b 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#828c95), color-stop(100%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #828c95 0%,#2f2f2f 100%,#28343b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #828c95 0%,#2f2f2f 100%,#28343b 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #828c95 0%,#2f2f2f 100%,#28343b 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #828c95 0%,#2f2f2f 100%,#28343b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2f2f', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
 }
 
-div#header div.headerbuttons a.commercial:hover,div#header div.headerbuttons a.commercial.active {
-background-position:0 -26px
+div#header div.headerbuttons a span {
+	display: block;
+	text-align: center;
+	font: 13pt/18pt times new roman;
+	text-shadow: 0 0 1px #fff;
+	color: transparent;
+	font-weight: 700
 }
 
-div#header div.headerbuttons a.films {
-background-position:0 -52px
+div#contact div.networks a {
+	height:30px;
+	opacity:0.7;
+	width:30px
 }
 
-div#header div.headerbuttons a.films:hover,div#header div.headerbuttons a.films.active {
-background-position:0 -78px
-}
-
-div#header div.headerbuttons a.stills {
-background-position:0 -104px
-}
-
-div#header div.headerbuttons a.stills:hover,div#header div.headerbuttons a.stills.active {
-background-position:0 -130px
-}
-
-div#header div.headerbuttons a.contact {
-background-position:-114px 0
-}
-
-div#header div.headerbuttons a.contact:hover,div#header div.headerbuttons a.contact.active {
-background-position:-114px -26px
-}
-
-div#header div.headerbuttons a.home {
-background-position:-113px -52px
-}
-
-div#header div.headerbuttons a.home:hover,div#header div.headerbuttons a.home.active {
-background-position:-113px -78px
-}
-
-div#header div.headerbuttons a.filmography {
-background-position:-228px 0
-}
-
-div#header div.headerbuttons a.filmography:hover,div#header div.headerbuttons a.filmography.active {
-background-position:-228px -26px
-}
-
-div#header div.headerbuttons a.musicvideos {
-background-position:-227px -52px
-}
-
-div#header div.headerbuttons a.musicvideos:hover,div#header div.headerbuttons a.musicvideos.active {
-background-position:-227px -78px
+div#contact div.networks a:hover {
+	opacity:1.0
 }
 
 div#contact div.networks a.facebook {
-background-position:-71px -154px
+	background-position:-71px 0
 }
 
 div#contact div.networks a.linkedin {
-background-position:-36px -154px
+	background-position:-36px 0
 }
 
 div#contact div.networks a.gmail {
-background-position:0 -154px
+	background-position:0 0
 }
 
 div#main {
-margin:0 auto
+	margin:0 auto;
+	width: 90%
 }
 
 div.filmography,div.films {
-height:290px;
-margin-top:10px!important
+	height:290px;
+	margin-top:10px!important
 }
 
 div.pageheader,div.filmography div.sectionheader,div.filmography ul li span {
-color:#E1C811
+	color:#E1C811
 }
 
 div.pageheader {
-display:none;
-font-size:30pt;
-margin:20px auto 0 10%
+	display:none;
+	font-size:30pt;
+	margin:20px auto 0 10%
 }
 
 div.contact .addresses .pageheader,div.contact .networks .pageheader {
-display:block;
-margin-left:0!important;
-margin-top:0!important
+	display:block;
+	margin-left:0!important;
+	margin-top:0!important
 }
 
 div.contact .networks .pageheader {
-margin-bottom:20px!important
+	margin-bottom:20px!important
 }
 
 div.contact .addresses,div.contact .networks {
-float:left;
-width:400px
+	float:left;
+	width:400px
 }
 
 div.contact .networks a img {
-height:30px;
-opacity:0.8;
-width:30px
+	height:30px;
+	opacity:0.8;
+	width:30px
 }
 
 div.filmography div.sectionheader {
-font-size:18pt;
-font-weight:700;
-margin:0
+	font-size:18pt;
+	font-weight:700;
+	margin:0
 }
 
 div.filmography ul li span {
-font-size:13pt;
-font-style:italic
+	font-size:13pt;
+	font-style:italic
 }
 
 div.filmography,div.contact,div.films,div.stills {
-color:#afafaf;
-font-size:12pt;
-margin:5px auto 0;
-overflow:scroll;
-overflow-x:hidden;
-overflow-y:auto;
-padding-left:3.5%;
-width:80%
+	color:#afafaf;
+	font-size:12pt;
+	margin:5px auto 0;
+	overflow:scroll;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding-left:3.5%;
+	width:80%
 }
 
 div.stills {
-font-size:30pt;
-margin:50px 165px
+	font-size:30pt;
+	margin:50px 165px
 }
 
 div.films img {
-border-color:#000;
-border-style:groove;
-height:280px;
-opacity:0.7;
-padding:7px;
-width:200px
+	border-color:#000;
+	border-style:groove;
+	height:280px;
+	opacity:0.7;
+	padding:7px;
+	width:200px
 }
 
 div.films img:hover {
-filter:alpha(opacity=100);
-opacity:1
+	filter:alpha(opacity=100);
+	opacity:1
 }
 
 div.films a:not(.soon) img {
-cursor:pointer
+	cursor:pointer
 }
 
 .videodetails #title,.videodetails #description {
-font-size:32pt;
-font-weight:700;
-text-align:center
+	font-size:32pt;
+	font-weight:700;
+	text-align:center
 }
 
 .videodetails #description {
-font-size:13pt;
-font-weight:400
+	font-size:13pt;
+	font-weight:400
 }
 
 .videodetails iframe {
-float:left;
-height:315px;
-margin:2px 20px!important;
-width:560px
+	float:left;
+	height:315px;
+	margin:2px 20px!important;
+	width:560px
 }
 
 .videodetails #synopsis {
-float:right;
-font-size:11pt;
-margin:10px auto 0;
-width:400px
+	float:right;
+	font-size:11pt;
+	margin:10px auto 0;
+	width:400px
 }
 
 a.filmthumb {
-text-decoration:none
+	text-decoration:none
 }
 
 .fancybox-skin.film {
-background-color:#afafaf;
-border:2px outset #666;
-border-radius:15px!important;
-color:#000;
-padding:6px
+	background-color:#afafaf;
+	border:2px outset #666;
+	border-radius:15px!important;
+	color:#000;
+	padding:6px
 }
 
 .video_gallery {
-background-color:#000;
-color:#afafaf;
-min-height:330px;
-margin:20px auto 0;
-width:100%
+	background-color:#000;
+	color:#afafaf;
+	min-height:330px;
+	margin:20px auto 0;
+	width:100%
 }
 
 .video_gallery iframe {
-height:330px;
-width:528px
+	height:330px;
+	width:528px
 }
 
 .video_gallery .slider {
-float:left;
-height:inherit;
-overflow:scroll;
-width:512px
+	float:left;
+	height:inherit;
+	overflow:scroll;
+	width:512px
 }
 
 .video_gallery div.slider_single,.video_gallery img.video_thumbnail {
--moz-border-radius:10px;
--webkit-border-radius:10px;
-border-radius:10px
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px
 }
 
 .video_gallery .slider_single {
-border-color:#000;
-border-style:solid;
-border-width:1px;
-cursor:pointer!important;
-float:left;
-width:498px
+	border-color:#000;
+	border-style:solid;
+	border-width:1px;
+	cursor:pointer!important;
+	float:left;
+	width:498px
 }
 
 .video_gallery .slider_single:hover {
-border:1px #afafaf solid;
-border-color:#afafaf
+	border:1px #afafaf solid;
+	border-color:#afafaf
 }
 
 .video_gallery .slider_single .arrow {
-background:url(/fancybox/source/fancybox_sprite.png) 0 -70px;
-display:none;
-float:right;
-height:33px;
-margin-bottom:-33px;
-margin-right:3px;
-width:33px
+	background:url(/fancybox/source/fancybox_sprite.png) 0 -70px;
+	display:none;
+	float:right;
+	height:33px;
+	margin-bottom:-33px;
+	margin-right:3px;
+	width:33px
 }
 
 .video_gallery .slider_single img.video_thumbnail {
-display:inline;
-float:left;
-height:125px;
-opacity:0.7;
-width:222px
+	display:inline;
+	float:left;
+	height:125px;
+	opacity:0.7;
+	width:222px
 }
 
 .video_gallery .slider_single:hover .info {
-color:#fff
+	color:#fff
 }
 
 .video_gallery .vidframe.commercial,.video_gallery .vidframe.music_video {
-margin-left:50px;
-padding:10px
+	margin-left:50px;
+	padding:10px
 }
 
 .video_gallery .slider_single .info {
-float:right;
-text-align:left;
-width:276px
+	float:right;
+	text-align:left;
+	width:276px
 }
 
 .video_gallery .slider_single .info p {
-margin-bottom:0;
-margin-left:5px
+	margin-bottom:0;
+	margin-left:5px
 }
 
 div.video_gallery div.slider_single div.info p.title {
-font-size:13pt!important;
-font-weight:700;
-margin-bottom:-10px!important
+	font-size:13pt!important;
+	font-weight:700;
+	margin-bottom:-10px!important
 }
 
 .video_gallery .inst_vidframe {
-display:block;
-margin-top:40%
+	display:block;
+	margin-top:40%
 }
 
 .fb-like {
-left:50px!important;
-position:absolute!important;
-top:161px!important
+	left:50px!important;
+	position:absolute!important;
+	top:161px!important
 }
 
 div#footer {
-background-image:url(<%=asset_path"bottom.jpg"%>);
-background-position:top;
-background-repeat:no-repeat;
-background-size:100%;
-bottom:0;
-color:#afafaf;
-min-height:110px;
-position:fixed;
-text-align:right;
-width:100%
+	background-image:url(<%=asset_path"bottom.jpg"%>);
+	background-position:top;
+	background-repeat:no-repeat;
+	background-size:100%;
+	bottom:0;
+	color:#afafaf;
+	min-height:110px;
+	position:fixed;
+	text-align:right;
+	width:100%
 }
 
 div#footer span.footertext {
-cursor:default;
-margin-right:45px
+	cursor:default;
+	margin-right:45px
 }
 
 .films a.soon,a.filmthumb.soon {
-cursor:not-allowed
+	cursor:not-allowed
 }
 
 ::-webkit-scrollbar {
-width:10px
+	width:10px
 }
 
 ::-webkit-scrollbar-track {
--webkit-border-radius:10px;
--webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
-border-radius:10px
+	-webkit-border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius:10px
 }
 
 ::-webkit-scrollbar-thumb {
--webkit-border-radius:10px;
--webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
-background:rgba(175,175,175,1);
-border-radius:10px
+	-webkit-border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
+	background:rgba(175,175,175,1);
+	border-radius:10px
 }
 
 ::-webkit-scrollbar-corner {
-background:#000
+	background:#000
 }
 
 div.contact .networks,.video_gallery .vidframe {
-float:right
+	float:right
 }
 
 div.contact .networks a:hover img,.video_gallery .slider_single:hover img.video_thumbnail {
-opacity:1
+	opacity:1
 }
 
 .videodetails .vidout,.hometable {
-text-align:justify;
-vertical-align:top
+	text-align:justify;
+	vertical-align:top
 }
