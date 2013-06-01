@@ -1,12 +1,1 @@
-<div class="pageheader">Films</div>
-<div class="films">
-	<% Video.by_type("film").each do |f| %>
-	<a class="filmthumb<%= " soon" if !f.url %>" title="<%= f.title.gsub("&quot;","'") %>" data_url="<%= f.url %>" href="javascript:void(0);">
-		<img title="<%= f.title.gsub("&quot;","'") %><%= " (Video coming soon...)" if !f.url %>" src="<%= asset_path f.image_url %>" /> 
-		<span class="syn" style="display:none;">
-			<%= raw f.synopsis.to_s.gsub("&quot;","'").gsub(";","<br>") %><br>
-		</span>
-		<span class="desc" style="display:none;"><%= raw f.description.to_s.gsub("&quot;","'").gsub(";","<br>") %><br></span>
-	</a>
-	<% end %>
-</div>
+<%= render :partial => "videos/gallery", :locals => {:typename => "film", :title => "Films", :css_class => "films"} %>

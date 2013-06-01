@@ -1,0 +1,23 @@
+<div class="pageheader"><%= title %></div>
+<div class="gallery <%= css_class %>">
+	<% Video.by_type(typename).each do |v| %>
+	<div class="video <%= typename %>">
+		<a class="watch<%= " soon" if !v.url %>" data_url="<%= v.url %>" href="javascript:void(0);">
+			<img src="<%= asset_path v.image_url %>" />
+		</a>
+		<span class="text">
+			<span class="title"><%= raw v.title.to_s.gsub("&quot;","'").gsub(";","<br>") %></span>
+			<span class="desc"><%= raw v.description.to_s.gsub("&quot;","'").gsub(";","<br>") %></span>
+			<% if v.synopsis %>
+			<% syn = v.synopsis.to_s.gsub("&quot;","'").gsub(";","<br>") %>
+			<% short_syn = syn[0..60].gsub(/\s\w+$/, '...') %>
+			<span class="syn">
+				<%= raw short_syn %>
+				<span class="read_more">Read more</span>
+			</span>
+			<span class="syn_hidden"><%= raw syn %></span>
+		</span>
+		<% end %>
+	</div>
+	<% end %>
+</div>

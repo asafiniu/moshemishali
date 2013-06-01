@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-	attr_accessible :description, :title, :url, :typename, :image_url
+	attr_accessible :description, :title, :url, :typename, :image_url, :synopsis
 
 	def is_valid
 		(nil != (self.typename =~ /filmography/)) or 

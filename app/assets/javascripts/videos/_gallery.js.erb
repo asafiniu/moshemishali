@@ -1,0 +1,29 @@
+$(document).ready(function(e){
+	attachVideoEvents();
+});
+attachVideoEvents = function() {
+	$("a.watch").on("click", function(e) {
+		var a = $(e.target).parent();
+		var video = {
+			title: a.attr("title"), 
+			description: a.find(".desc").html(), 
+			vidlink: a.attr("data_url")
+		};
+
+		if ( video.vidlink && video.vidlink.match("http") ) {
+			VideoBox.Show(video);
+		}
+	});
+	$("span.read_more").on("mouseover", function(e){
+		var video = $(e.target).parents("div.video");
+		window.mouse = {x: e.clientX, y: e.clientY};
+		VideoBox.ShowDetails({
+			anchor: video,
+			title: video.find(".title").html(),
+			description: video.find(".desc").html(),
+			synopsis: video.find(".syn_hidden").html()
+		});
+	}).on("mouseleave", function(e){
+		VideoBox.RemoveDetails();
+	});
+}

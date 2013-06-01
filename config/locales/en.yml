@@ -2,4 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  about: 
+    story: "Born on 14.7.1983 in Beit Sha'an, a small city in the northen part of Israel. He first encountered cinematography at the age of 15 - shooting a chase scene as part of a filmmaking course in Ort Ramot high school in Jerusalem. After finishing 3 years of cinema studies in high school he joined the IDF spokesperson filmmaking unit as a Videographer. Between the years 2002 and 2005 Moshe shot a few short documentary films, several promotional films and more than 250 news items documenting military operations, search & rescue delegations and other major events in the history of Israel."
+    story_bottom: "In 2006 Moshe started working as Camera Assistant; he participated in various projects including films, commercials and TV series. Since 2010 Moshe has been working as a Cinematographer, shooting films, commercials and TV series. In the past few years, films shot by Moshe have been nominated for international film festivals such as \"Cannes\", \"CFC\" and \"MIFF\"."

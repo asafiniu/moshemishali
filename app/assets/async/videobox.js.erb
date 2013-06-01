@@ -1,17 +1,49 @@
-showFilm = function(film) {
-  var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
-  var frame = $(videoHTML.find("iframe"));
-  videoHTML.find("#title").html(film.title);
-  videoHTML.find("#description").html(film.description);
-  videoHTML.find(".vidout").prepend(VideoLoader.Youtube.GetFrameHTML(film.vidlink));
-  videoHTML.find("#synopsis").html(film.synopsis);
+VideoBox = (function(){
+  var _size = function(){return {width: window.screen.availHeight*(0.72)*(16/9),height: window.screen.availHeight*(0.72)};};
+  var _youtubeParams = {autoplay:1,modestbranding:1,autohide:1,showinfo:0,hd:1};
+  var _iframeWrap = function(url) {
+    url += "?";
+    url += Object.keys(_youtubeParams).map(function(attr) {
+      return encodeURIComponent(attr) + '=' + encodeURIComponent(_youtubeParams[attr])}).join('&');
+    return $("<iframe>", {src: url,frameborder: 0,width: _size().width,height:_size().height});
+  };
 
-  $.fancybox.open({
-    type: 'html',
-    openEffect: 'fade',
-    content: $("<div>").html(videoHTML).html(),
-    beforeShow: function(e) {
-      $(".fancybox-skin").addClass("film");
+  return {
+    Show: function(video) {
+      var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
+      videoHTML.find("#title").html(video.title);
+      videoHTML.find("#description").html(video.description);
+      videoHTML.find(".vidout").prepend(_iframeWrap(video.vidlink));
+
+      $.fancybox.open({
+        type: 'html',
+        openEffect: 'fade',
+        content: $("<div>").html(videoHTML).html(),
+        beforeShow: function(e) {
+          $(".fancybox-skin").addClass("video");
+        }
+      });
+    },
+    ShowDetails: function(video) {
+      var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails_tooltip') %>");
+      videoHTML.find("#title").html(video.title);
+      videoHTML.find("#description").html(video.description);
+      videoHTML.find("#synopsis").html(video.synopsis);
+      $(video.anchor).append(videoHTML);
+      $(".videodetails_tooltip").offset({
+        left: window.mouse.x + 10,
+        top: window.mouse.y - videoHTML.height()
+      }); 
+      if ( window.mouse.x + 10 + videoHTML.width() > window.screen.availWidth ) {
+        $(".videodetails_tooltip").offset({
+          left: window.mouse.x - videoHTML.width() - 10,
+          top: window.mouse.y - videoHTML.height()
+        });
+      }           
+      window.mouse = undefined;
+    },
+    RemoveDetails: function() {
+      $(".videodetails_tooltip").remove();
     }
-  });
-};
+  }
+})();

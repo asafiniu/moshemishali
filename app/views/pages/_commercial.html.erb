@@ -1,18 +1,1 @@
-<div class="pageheader">Commercial</div>
-<div class="video_gallery">
-    <div class="slider" id="slider_com">
-        <% Video.by_type("commercial").each do |com| %>
-        <div class="slider_single">
-            <img class="video_thumbnail" typename="<%= com.typename %>" title="<%= com.title %>" src="<%= asset_path com.image_url %>" data_url="<%= com.url %>" />
-            <span class="arrow"></span>
-            <div class="info">
-                <p class="title"><%= com.title.gsub("&quot;","'") %></p>
-                <p class="description"><%= raw com.description.to_s.gsub("&quot;","'").gsub(";","<br>") %></p>
-            </div>
-        </div>
-        <% end %>                
-    </div>
-    <div class="vidframe commercial">
-        <span class="inst_vidframe">Click on the left side of this page to show a video</span>
-    </div>
-</div>
+<%= render :partial => "videos/gallery", :locals => {:typename => "commercial", :title => "Commercial", :css_class => "commercial"} %>

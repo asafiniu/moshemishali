@@ -1,18 +1,1 @@
-<div class="pageheader">Music Videos & Video Art</div>
-<div class="video_gallery">
-    <div class="slider" id="slider_mv">
-        <% Video.by_type("music_video").each do |mv| %>
-        <div class="slider_single">
-            <img class="video_thumbnail" typename="<%= mv.typename %>" title="<%= mv.title %>" src="<%= asset_path mv.image_url %>" data_url="<%= mv.url %>" />
-            <span class="arrow"></span>
-            <div class="info">
-                <p class="title"><%= mv.title.gsub("&quot;","'") %></p>
-                <p class="description"><%= raw mv.description.to_s.gsub("&quot;","'").gsub(";","<br>") %></p>
-            </div>
-        </div>
-        <% end %>                
-    </div>
-    <div class="vidframe music_video">
-        <span class="inst_vidframe">Click on the left side of this page to show a video</span>
-    </div>
-</div>
+<%= render :partial => "videos/gallery", :locals => {:typename => "music_video", :title => "Music Videos & Video Art", :css_class => "music_videos"} %>
