@@ -1,8 +1,169 @@
+.fancybox-skin.video {
+	-moz-border-radius:15px!important;
+	-webkit-border-radius:15px!important;
+	background-color:#000;
+	border:2px outset #fff;
+	border-radius:15px!important;
+	color:#000;
+	padding:6px
+}
+
+.fb-like {
+	left:50px!important;
+	position:absolute!important;
+	top:161px!important
+}
+
+.films a.soon,a.film.soon {
+	cursor:not-allowed
+}
+
+.videodetails #description {
+	font-size:13pt;
+	font-weight:400
+}
+
+.videodetails #title,.videodetails #description {
+	display:inline;
+	font-size:18pt;
+	font-weight:700;
+	padding-left:18px
+}
+
+.videodetails .vidout {
+	text-align:justify;
+	vertical-align:top
+}
+
+.videodetails iframe {
+	margin:2px 20px!important
+}
+
+.videodetails_tooltip {
+	-moz-border-radius:10px!important;
+	-webkit-border-radius:10px!important;
+	background:#ffffc8;
+	border:1px solid #FFF;
+	border-radius:10px!important;
+	color:#000;
+	font-size:12pt;
+	padding:5px;
+	position:absolute;
+	width:400px;
+	z-index:9999
+}
+
+.videodetails_tooltip #description {
+	font-size:16pt
+}
+
+.videodetails_tooltip #title {
+	font-size:18pt
+}
+
+::-webkit-scrollbar {
+	width:10px
+}
+
+::-webkit-scrollbar-corner {
+	background:#000
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
+	background:rgba(175,175,175,1);
+	border-radius:10px
+}
+
+::-webkit-scrollbar-track {
+	-webkit-border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius:10px
+}
+
 body {
 	background-color:#000;
 	color:#afafaf;
 	font:12pt "times new roman", arial;
 	overflow:hidden
+}
+
+div#about div.contact {
+	display:inline-block;
+	vertical-align:top;
+	width:20%
+}
+
+div#about div.contact a.network {
+	background:url(<%=asset_path"network_icons.png"%>);
+	height:30px;
+	opacity:0.7;
+	width:30px
+}
+
+div#about div.contact a.network img {
+	height:30px;
+	opacity:0.8;
+	width:30px
+}
+
+div#about div.contact a.network.facebook {
+	background-position:-71px 0
+}
+
+div#about div.contact a.network.gmail {
+	background-position:0 0
+}
+
+div#about div.contact a.network.linkedin {
+	background-position:-36px 0
+}
+
+div#about div.contact a.network:hover {
+	opacity:1.0
+}
+
+div#about div.contact ul {
+	-webkit-padding-start:10px;
+	list-style:none
+}
+
+div#about div.contact ul li {
+	margin-bottom:12px
+}
+
+div#about div.contact ul li a.numb,div#about div.contact ul li a.numb:hover,div#about div.contact ul li a.numb:active {
+	color:#afafaf
+}
+
+div#about div.contact ul li span {
+	color:#fff;
+	display:block;
+	font-weight:700
+}
+
+div#about div.contact ul li.last {
+	margin-bottom:0;
+	width:180px
+}
+
+div#footer {
+	background-image:url(<%=asset_path"bottom.jpg"%>);
+	background-position:top;
+	background-repeat:no-repeat;
+	background-size:100%;
+	bottom:0;
+	color:#afafaf;
+	min-height:110px;
+	position:fixed;
+	text-align:right;
+	width:100%
+}
+
+div#footer span.footertext {
+	cursor:default;
+	margin-right:45px
 }
 
 div#header {
@@ -23,13 +184,154 @@ div#header div.headerbuttons {
 	width:686px
 }
 
-div#about div.contact a.network {
-	background:url(<%=asset_path"network_icons.png"%>)
+div#header div.headerbuttons a span {
+	color:transparent;
+	display:block;
+	font:13pt/18pt times new roman;
+	font-weight:700;
+	text-align:center;
+	text-shadow:0 0 1px #fff
 }
 
 div#header div.headerbuttons a,div#about div.contact a.network {
 	display:inline-block;
 	text-decoration:none!important
+}
+
+div#main {
+	margin:0 auto;
+	width:90%
+}
+
+div#main div.section {
+	overflow:scroll
+}
+
+div.about {
+	padding-left:10%;
+	width:78%
+}
+
+div.about div.about_text {
+	display:inline-block;
+	margin:12px 27px 0 0;
+	width:50%
+}
+
+div.about img.face_img {
+	display:inline-block;
+	height:177px;
+	padding:16px 5px 0 0;
+	vertical-align:top;
+	width:130px
+}
+
+div.about,div.filmography,div.gallery {
+	color:#afafaf;
+	font-size:12pt;
+	height:290px;
+	margin:10px auto 0!important;
+	overflow:scroll;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding-left:3.5%;
+	width:80%
+}
+
+div.contact li a:hover img {
+	opacity:1
+}
+
+div.filmography div.sectionheader {
+	font-size:18pt;
+	font-weight:700;
+	margin:0
+}
+
+div.filmography ul li span {
+	font-size:13pt;
+	font-style:italic
+}
+
+div.gallery {
+	padding-left:0;
+	width:95%
+}
+
+div.gallery div.video {
+	cursor:pointer;
+	display:inline-table;
+	margin:0 10px 5px 0;
+	opacity:0.7;
+	width:250px
+}
+
+div.gallery div.video a.watch img {
+	height:150px;
+	width:267px
+}
+
+div.gallery div.video a.watch,div.gallery div.video a.watch img {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	display:block;
+	margin:0 auto;
+	text-decoration:none
+}
+
+div.gallery div.video a:not(.soon) img {
+	cursor:pointer
+}
+
+div.gallery div.video span.read_more {
+	color:#8787da;
+	cursor:pointer;
+	text-decoration:underline
+}
+
+div.gallery div.video span.syn {
+	font-style:italic;
+	margin:0 auto;
+	text-align:justify
+}
+
+div.gallery div.video span.syn_hidden {
+	display:none
+}
+
+div.gallery div.video span.text > span.title,div.gallery div.video span.text > span.desc {
+	display:block
+}
+
+div.gallery div.video span.text > span.title,div.gallery div.video:not(.film) span.text > span.desc {
+	text-align:center
+}
+
+div.gallery div.video span.text span.title {
+	font-size:13pt;
+	font-weight:700;
+	margin-top:5px
+}
+
+div.gallery div.video.film a.watch img {
+	height:150px;
+	width:106px
+}
+
+div.gallery div.video:hover {
+	filter:alpha(opacity=100);
+	opacity:1
+}
+
+div.pageheader {
+	display:none;
+	font-size:30pt;
+	margin:20px auto 0 10%
+}
+
+div.pageheader,div.filmography div.sectionheader,div.filmography ul li span {
+	color:#E1C811
 }
 
 div#header div.headerbuttons a {
@@ -69,319 +371,9 @@ div#header div.headerbuttons a.active {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2f2f', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
 }
 
-div#header div.headerbuttons a span {
-	display: block;
-	text-align: center;
-	font: 13pt/18pt times new roman;
-	text-shadow: 0 0 1px #fff;
-	color: transparent;
-	font-weight: 700
-}
-
-div#about div.contact a.network {
-	height:30px;
-	opacity:0.7;
-	width:30px
-}
-
-div#about div.contact a.network:hover {
-	opacity:1.0
-}
-
-div#about div.contact a.network.facebook {
-	background-position:-71px 0
-}
-
-div#about div.contact a.network.linkedin {
-	background-position:-36px 0
-}
-
-div#about div.contact a.network.gmail {
-	background-position:0 0
-}
-
-div#main {
-	margin:0 auto;
-	width: 90%
-}
-
-div#main div.section {
-	overflow: scroll
-}
-
-div.about img.face_img {
-	width: 130px;
-	height: 177px;
-	padding: 16px 5px 0 0;
-	vertical-align: top;
-	display:inline-block
-}
-
-div.about div.about_text {
-	width: 50%;
-	display: inline-block;
-	margin: 12px 27px 0 0
-}
-
-div.about, div.filmography,div.gallery {
-	height:290px;
-	margin-top:10px!important
-}
-
-div.pageheader, div.filmography div.sectionheader,div.filmography ul li span {
-	color:#E1C811
-}
-
-div.pageheader {
-	display:none;
-	font-size:30pt;
-	margin:20px auto 0 10%
-}
-
-div#about div.contact {
-	width: 20%;
-	vertical-align: top;
-	display:inline-block
-}
-
-div#about div.contact ul {
-	list-style: none;
-	-webkit-padding-start: 10px
-}
-
-div#about div.contact ul li {
-	margin-bottom: 12px;
-}
-
-div#about div.contact ul li.last {
-	margin-bottom: 0;
-	width: 180px;
-}
-
-div#about div.contact ul li span {
-	color: #fff;
-	display:block;
-	font-weight: bold
-}
-
-div#about div.contact ul li a.numb,
-div#about div.contact ul li a.numb:hover,
-div#about div.contact ul li a.numb:active {
-	color: #afafaf
-}
-
-div#about div.contact a.network img {
-	height:30px;
-	opacity:0.8;
-	width:30px
-}
-
-div.filmography div.sectionheader {
-	font-size:18pt;
-	font-weight:700;
-	margin:0
-}
-
-div.filmography ul li span {
-	font-size:13pt;
-	font-style:italic
-}
-
-div.about, div.filmography,div.gallery {
-	color:#afafaf;
-	font-size:12pt;
-	margin:5px auto 0;
-	overflow:scroll;
-	overflow-x:hidden;
-	overflow-y:auto;
-	padding-left:3.5%;
-	width:80%
-}
-
-div.gallery {
-	width: 95%;
-	padding-left: 0
-}
-
-div.about {
-	width: 78%;
-	padding-left: 10%
-}
-
-div.gallery div.video {
-	display: inline-table;
-	width: 250px;
-	margin: 0 10px 5px 0;
-	cursor: pointer
-}
-
-div.gallery div.video a.watch img {
-	height:150px;
-	width:267px
-}
-
-div.gallery div.video.film a.watch img {
-	height:150px;
-	width:106px
-}
-
-div.gallery div.video a.watch,
-div.gallery div.video a.watch img {
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px
-	text-decoration:none;
-	display: block;
-	margin: 0 auto
-}
-
-div.gallery div.video {
-	opacity: 0.7;
-}
-
-div.gallery div.video:hover {
-	filter:alpha(opacity=100);
-	opacity:1
-}
-
-div.gallery div.video a:not(.soon) img {
-	cursor:pointer
-}
-
-div.gallery div.video span.text span.title {
-	margin-top: 5px;
-	font-size: 13pt;
-	font-weight:bold;
-}
-
-div.gallery div.video span.text > span.title,
-div.gallery div.video span.text > span.desc {
-	display: block
-}
-
-div.gallery div.video span.text > span.title,
-div.gallery div.video:not(.film) span.text > span.desc {
-	text-align: center
-}
-
-div.gallery div.video span.syn {
-	margin: 0 auto;
-	text-align:justify;
-	font-style: italic
-}
-
-div.gallery div.video span.syn_hidden {
-	display: none
-}
-
-div.gallery div.video span.read_more {
-	text-decoration: underline;
-	color: #8787da;
-	cursor: pointer;
-}
-
-.videodetails #title,.videodetails #description {
-	display:inline;
-	font-size:18pt;
-	font-weight:700;
-	padding-left:18px
-}
-
-.videodetails #description {
-	font-size:13pt;
-	font-weight:400
-}
-
-.videodetails iframe {
-	margin:2px 20px!important
-}
-
-.videodetails_tooltip {
-	color: #000;
-	font-size: 12pt;
-	background: rgb(255, 255, 200);
-	border: 1px solid white;
-	position: absolute;
-	z-index: 9999;
+div#welcome {
+	padding-top: 10px;
+	height: 290px;
 	width: 400px;
-	padding: 5px;
-	-moz-border-radius:10px !important;
-	-webkit-border-radius:10px !important;
-	border-radius:10px !important
-}
-
-.videodetails_tooltip #title {
-	font-size: 18pt;
-}
-
-.videodetails_tooltip #description {
-	font-size: 16pt;	
-}
-
-.fancybox-skin.video {
-	background-color: #000;
-	border: 2px outset #fff;
-	-moz-border-radius:15px !important;
-	-webkit-border-radius:15px !important;
-	border-radius:15px !important;
-	color:#000;
-	padding:6px
-}
-
-.fb-like {
-	left:50px!important;
-	position:absolute!important;
-	top:161px!important
-}
-
-div#footer {
-	background-image:url(<%=asset_path"bottom.jpg"%>);
-	background-position:top;
-	background-repeat:no-repeat;
-	background-size:100%;
-	bottom:0;
-	color:#afafaf;
-	min-height:110px;
-	position:fixed;
-	text-align:right;
-	width:100%
-}
-
-div#footer span.footertext {
-	cursor:default;
-	margin-right:45px
-}
-
-.films a.soon,a.film.soon {
-	cursor:not-allowed
-}
-
-::-webkit-scrollbar {
-	width:10px
-}
-
-::-webkit-scrollbar-track {
-	-webkit-border-radius:10px;
-	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius:10px
-}
-
-::-webkit-scrollbar-thumb {
-	-webkit-border-radius:10px;
-	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
-	background:rgba(175,175,175,1);
-	border-radius:10px
-}
-
-::-webkit-scrollbar-corner {
-	background:#000
-}
-
-div.contact li a:hover img {
-	opacity:1
-}
-
-.videodetails .vidout {
-	text-align:justify;
-	vertical-align:top
+	margin: 0 auto
 }

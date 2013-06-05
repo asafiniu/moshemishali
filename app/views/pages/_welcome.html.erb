@@ -1,7 +1,8 @@
 <ul class="slider">
-	<li><img src="<%= asset_path "slider/kamera.jpg" %>" /></li>
-	<li><img src="<%= asset_path "slider/kamera.jpg" %>" /></li>
-	<li><img src="<%= asset_path "slider/kamera.jpg" %>" /></li>
-	<li><img src="<%= asset_path "slider/kamera.jpg" %>" /></li>
-	<li><img src="<%= asset_path "slider/kamera.jpg" %>" /></li>
+	<li><a goto="musicvideos" id="<%= Video.find_by_title("Halomot Ra&quot;im (Bad Dreams)").id.to_s %>" href="javascript:void(0);">
+		<img src="<%= asset_path "slider/1.jpg" %>" /></a></li>
+	<li><a goto="films" id="<%= Video.find_by_title("Zipper").id.to_s %>" href="javascript:void(0);"><img src="<%= asset_path "slider/5.jpg" %>" /></a></li>
+	<li><a goto="films" id="<%= Video.find_by_title("In Bed at 10pm").id.to_s %>" href="javascript:void(0);"><img src="<%= asset_path "slider/6.jpg" %>" /></a></li>
+	<li><a goto="films" id="<%= Video.find_by_title("Martha Must Fly").id.to_s %>" href="javascript:void(0);"><img src="<%= asset_path "slider/7.jpg" %>" /></a></li>
+	<li><a goto="films" id="<%= Video.find_by_title("Paul").id.to_s %>" href="javascript:void(0);"><img src="<%= asset_path "slider/paul_street.jpg" %>" /></a></li>
 </ul>

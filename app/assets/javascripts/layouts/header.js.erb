@@ -5,11 +5,12 @@ $(document).ready(function(e){
 	loadSlider();
 });
 loadSlider = function() {
-	if ( $.fn.bxSlider ) {
-		$(".slider").bxSlider();
+	if ( !$.fn.bxSlider ) {
+		bxSliderLoad();	
+		loadSlider();
 	}
 	else {
-		alert("couldn't find bxSlider");
+		$(".slider").bxSlider();
 	}
 }
 getClientName = function() {

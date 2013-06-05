@@ -27,4 +27,10 @@ attachVideoEvents = function() {
 	}).on("mouseleave", function(e){
 		VideoBox.RemoveDetails();
 	});
-}
+	$("div#welcome ul.slider li a").on("click", function(e){
+		watchFromPhoto($(this).attr("goto"), this.id);
+	});
+};
+watchFromPhoto = function(section, videoId) {
+	$(".headerbuttons a[goto='"+section+"']").trigger("click");
+};
