@@ -11,8 +11,9 @@ VideoBox = (function(){
   return {
     Show: function(video) {
       var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
-      videoHTML.find("#title").html(video.title);
-      videoHTML.find("#description").html(video.description);
+      // videoHTML.find("#title").html(video.title);
+      // videoHTML.find("#description").html(video.description);
+      videoHTML.find("#title,#description").remove();
       videoHTML.find(".vidout").prepend(_iframeWrap(video.vidlink));
 
       $.fancybox.open({

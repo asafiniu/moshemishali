@@ -4,9 +4,10 @@ $(document).ready(function(e){
 attachVideoEvents = function() {
 	$("a.watch").on("click", function(e) {
 		var a = $(e.target).parent();
+		var text = $(e.target).parents(".video");
 		var video = {
-			title: a.attr("title"), 
-			description: a.find(".desc").html(), 
+			title: text.find("span.title").html(), 
+			description: text.find("span.desc").html(), 
 			vidlink: a.attr("data_url")
 		};
 

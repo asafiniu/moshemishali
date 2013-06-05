@@ -23,11 +23,11 @@ div#header div.headerbuttons {
 	width:801px
 }
 
-div#contact div.networks a {
+div#about div.contact a.network {
 	background:url(<%=asset_path"network_icons.png"%>)
 }
 
-div#header div.headerbuttons a,div#contact div.networks a {
+div#header div.headerbuttons a,div#about div.contact a.network {
 	display:inline-block;
 	text-decoration:none!important
 }
@@ -78,25 +78,25 @@ div#header div.headerbuttons a span {
 	font-weight: 700
 }
 
-div#contact div.networks a {
+div#about div.contact a.network {
 	height:30px;
 	opacity:0.7;
 	width:30px
 }
 
-div#contact div.networks a:hover {
+div#about div.contact a.network:hover {
 	opacity:1.0
 }
 
-div#contact div.networks a.facebook {
+div#about div.contact a.network.facebook {
 	background-position:-71px 0
 }
 
-div#contact div.networks a.linkedin {
+div#about div.contact a.network.linkedin {
 	background-position:-36px 0
 }
 
-div#contact div.networks a.gmail {
+div#about div.contact a.network.gmail {
 	background-position:0 0
 }
 
@@ -109,12 +109,26 @@ div#main div.section {
 	overflow: scroll
 }
 
-div.filmography,div.gallery {
+div.about img.face_img {
+	width: 130px;
+	height: 177px;
+	padding: 16px 5px 0 0;
+	vertical-align: top;
+	display:inline-block
+}
+
+div.about div.about_text {
+	width: 50%;
+	display: inline-block;
+	margin-top: 12px
+}
+
+div.about, div.filmography,div.gallery {
 	height:290px;
 	margin-top:10px!important
 }
 
-div.pageheader,div.filmography div.sectionheader,div.filmography ul li span {
+div.pageheader, div.filmography div.sectionheader,div.filmography ul li span {
 	color:#E1C811
 }
 
@@ -124,22 +138,38 @@ div.pageheader {
 	margin:20px auto 0 10%
 }
 
-div.contact .addresses .pageheader,div.contact .networks .pageheader {
+div#about div.contact {
+	width: 35%;
+	vertical-align: top;
+	display:inline-block
+}
+
+div#about div.contact ul {
+	list-style: none
+}
+
+div#about div.contact ul li {
+	margin-bottom: 12px;
+}
+
+div#about div.contact ul li.last {
+	margin-bottom: 0;
+	width: 180px;
+}
+
+div#about div.contact ul li span {
+	color: #fff;
 	display:block;
-	margin-left:0!important;
-	margin-top:0!important
+	font-weight: bold
 }
 
-div.contact .networks .pageheader {
-	margin-bottom:20px!important
+div#about div.contact ul li a.numb,
+div#about div.contact ul li a.numb:hover,
+div#about div.contact ul li a.numb:active {
+	color: #afafaf
 }
 
-div.contact .addresses,div.contact .networks {
-	float:left;
-	width:400px
-}
-
-div.contact .networks a img {
+div#about div.contact a.network img {
 	height:30px;
 	opacity:0.8;
 	width:30px
@@ -156,7 +186,7 @@ div.filmography ul li span {
 	font-style:italic
 }
 
-div.filmography,div.contact,div.gallery {
+div.about, div.filmography,div.gallery {
 	color:#afafaf;
 	font-size:12pt;
 	margin:5px auto 0;
@@ -165,6 +195,10 @@ div.filmography,div.contact,div.gallery {
 	overflow-y:auto;
 	padding-left:3.5%;
 	width:80%
+}
+
+div.about {
+	padding-left: 0
 }
 
 div.gallery {
@@ -180,12 +214,12 @@ div.gallery div.video {
 
 div.gallery div.video a.watch img {
 	height:150px;
-	width:200px
+	width:267px
 }
 
 div.gallery div.video.film a.watch img {
-	height:200px;
-	width:150px
+	height:150px;
+	width:106px
 }
 
 div.gallery div.video a.watch,
@@ -282,8 +316,8 @@ div.gallery div.video span.read_more {
 }
 
 .fancybox-skin.video {
-	background-color:#afafaf;
-	border:2px outset #666;
+	background-color: #000;
+	border: 2px outset #fff;
 	-moz-border-radius:15px !important;
 	-webkit-border-radius:15px !important;
 	border-radius:15px !important;
@@ -340,15 +374,11 @@ div#footer span.footertext {
 	background:#000
 }
 
-div.contact .networks,.video_gallery .vidframe {
-	float:right
-}
-
-div.contact .networks a:hover img,.video_gallery .slider_single:hover img.video_thumbnail {
+div.contact li a:hover img {
 	opacity:1
 }
 
-.videodetails .vidout,.hometable {
+.videodetails .vidout {
 	text-align:justify;
 	vertical-align:top
 }
