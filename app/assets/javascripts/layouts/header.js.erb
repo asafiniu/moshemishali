@@ -2,7 +2,16 @@ $(document).ready(function(e){
 	attachEvents();
 	$("body").addClass(getClientName());
 	$(".section").height(parseInt(window.screen.availHeight*0.9 - ($("#header").height() + $("#footer").height())));
+	loadSlider();
 });
+loadSlider = function() {
+	if ( $.fn.bxSlider ) {
+		$(".slider").bxSlider();
+	}
+	else {
+		alert("couldn't find bxSlider");
+	}
+}
 getClientName = function() {
 	return !navigator.userAgent.match(/iPhone|iPad|iPod|Android|webOS|BlackBerry/i) ? "" : "mobile";
 }
