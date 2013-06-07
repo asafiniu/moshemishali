@@ -1,7 +1,7 @@
 $(document).ready(function(e){
 	attachEvents();
 	$("body").addClass(getClientName());
-	$(".section").height(parseInt(window.screen.availHeight*0.9 - ($("#header").height() + $("#footer").height())));
+	$(".section").height(parseInt(window.screen.availHeight*0.8 - ($("#header").height() + $("#footer").height())));
 	loadSlider();
 });
 loadSlider = function() {
@@ -10,7 +10,17 @@ loadSlider = function() {
 		loadSlider();
 	}
 	else {
-		$(".slider").bxSlider();
+		window.slider = $(".slider").bxSlider({
+			autoStart: true,
+			pager: false,
+			controls: false,
+			randomStart: true,
+			infiniteLoop: true,
+			speed: 300,
+			easing: "ease-in-out",
+			touchEnabled: true,
+			auto: true
+		});
 	}
 }
 getClientName = function() {
@@ -24,6 +34,9 @@ attachEvents = function() {
 		}
 		
 		hideAllButSection(target.toLowerCase());
+		if ( target.match("welcome") ) {
+			window.slider.startAuto();
+		}
 	});
 };
 hideAllButSection = function(sectionID) {

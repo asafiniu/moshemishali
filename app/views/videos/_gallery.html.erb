@@ -1,7 +1,7 @@
 <div class="pageheader"><%= title %></div>
 <div class="gallery <%= css_class %>">
 	<% Video.by_type(typename).each do |v| %>
-	<div id="video_<%= v.id.to_s %>" class="video <%= typename %>">
+	<div class="video <%= typename %>" title="<%= v.title.to_s %>">
 		<a class="watch<%= " soon" if !v.url %>" data_url="<%= v.url %>" href="javascript:void(0);">
 			<img src="<%= asset_path v.image_url %>" />
 		</a>

@@ -3,7 +3,7 @@ $(document).ready(function(e){
 });
 attachVideoEvents = function() {
 	$("a.watch").on("click", function(e) {
-		var a = $(e.target).parent();
+		var a = $(e.target).parents(".video").find("a.watch");
 		var text = $(e.target).parents(".video");
 		var video = {
 			title: text.find("span.title").html(), 
@@ -15,22 +15,23 @@ attachVideoEvents = function() {
 			VideoBox.Show(video);
 		}
 	});
-	$("span.read_more").on("mouseover", function(e){
+	$("span.read_more").on("mouseenter", function(e){
 		var video = $(e.target).parents("div.video");
 		window.mouse = {x: e.clientX, y: e.clientY};
 		VideoBox.ShowDetails({
 			anchor: video,
 			title: video.find(".title").html(),
-			description: video.find(".desc").html(),
+			description: video.find(".desc").html().replace(/<br>/i,", "),
 			synopsis: video.find(".syn_hidden").html()
 		});
 	}).on("mouseleave", function(e){
 		VideoBox.RemoveDetails();
 	});
 	$("div#welcome ul.slider li a").on("click", function(e){
-		watchFromPhoto($(this).attr("goto"), this.id);
+		watchFromPhoto($(this).attr("goto"), $(this).attr("title"));
 	});
 };
-watchFromPhoto = function(section, videoId) {
+watchFromPhoto = function(section, videoTitle) {
 	$(".headerbuttons a[goto='"+section+"']").trigger("click");
+	$("div.video[title^='" + videoTitle.split(" ").first() +"'] a.watch").trigger("click");	
 };

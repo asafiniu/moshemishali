@@ -11,7 +11,7 @@
 .fb-like {
 	left:50px!important;
 	position:absolute!important;
-	top:161px!important
+	top:128px!important
 }
 
 .films a.soon,a.film.soon {
@@ -40,25 +40,34 @@
 }
 
 .videodetails_tooltip {
-	-moz-border-radius:10px!important;
-	-webkit-border-radius:10px!important;
-	background:#ffffc8;
-	border:1px solid #FFF;
-	border-radius:10px!important;
-	color:#000;
-	font-size:12pt;
-	padding:5px;
-	position:absolute;
-	width:400px;
-	z-index:9999
+	-moz-border-radius: 10px!important;
+	-webkit-border-radius: 10px!important;
+	background: #ffffc8;
+	border: 2px solid rgb(58, 58, 58);
+	border-radius: 10px!important;
+	color: rgb(58, 58, 58);
+	font-size: 12pt;
+	padding: 10px;
+	position: absolute;
+	width: 400px;
+	z-index: 9999
+}
+
+.videodetails_tooltip #synopsis {
+	padding: 10px
 }
 
 .videodetails_tooltip #description {
-	font-size:16pt
+	color: #555555;
+	font-style:italic;
+	font-size: 12pt;
+	display:inline-block;
 }
 
 .videodetails_tooltip #title {
-	font-size:18pt
+	display:inline-block;
+	font-size:22pt;
+	font-weight: bold
 }
 
 ::-webkit-scrollbar {
@@ -155,7 +164,7 @@ div#footer {
 	background-size:100%;
 	bottom:0;
 	color:#afafaf;
-	min-height:110px;
+	min-height:55px;
 	position:fixed;
 	text-align:right;
 	width:100%
@@ -167,20 +176,35 @@ div#footer span.footertext {
 }
 
 div#header {
-	background-image:url(<%=asset_path"top.jpg"%>);
+	background-image:url(<%=asset_path"top_notext.png"%>);
 	background-position:top;
 	background-repeat:no-repeat;
-	background-size:100%;
+	background-size:100% 70%;
 	display:block;
-	min-height:190px;
+	min-height:145px;
 	width:100%
+}
+
+div#header .header_title,
+div#header .header_subtitle {
+	font-size: 31pt;
+	color: #fff;
+	text-shadow: -3.5px -1.8px 4.2px #000;
+	position: absolute;
+	top: 15px;
+	left: 35px;
+}
+
+div#header .header_subtitle {
+	top: 60px;
+	font-size: 21pt
 }
 
 div#header div.headerbuttons {
 	height:23px;
 	margin:0 auto;
 	position:relative;
-	top:150px;
+	top:120px;
 	width:686px
 }
 
@@ -204,7 +228,19 @@ div#main {
 }
 
 div#main div.section {
-	overflow:scroll
+	overflow:scroll;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding-left:3.5%;
+	color:#afafaf;
+	font-size:12pt;
+	margin:10px auto 0!important;
+	width:80%
+}
+
+div#main div.section#welcome {
+	overflow: hidden;
+	padding: 0;
 }
 
 div.about {
@@ -215,7 +251,7 @@ div.about {
 div.about div.about_text {
 	display:inline-block;
 	margin:12px 27px 0 0;
-	width:50%
+	width:54%
 }
 
 div.about img.face_img {
@@ -224,18 +260,6 @@ div.about img.face_img {
 	padding:16px 5px 0 0;
 	vertical-align:top;
 	width:130px
-}
-
-div.about,div.filmography,div.gallery {
-	color:#afafaf;
-	font-size:12pt;
-	height:290px;
-	margin:10px auto 0!important;
-	overflow:scroll;
-	overflow-x:hidden;
-	overflow-y:auto;
-	padding-left:3.5%;
-	width:80%
 }
 
 div.contact li a:hover img {
@@ -262,13 +286,22 @@ div.gallery div.video {
 	cursor:pointer;
 	display:inline-table;
 	margin:0 10px 5px 0;
-	opacity:0.7;
 	width:250px
 }
 
 div.gallery div.video a.watch img {
 	height:150px;
-	width:267px
+	width:267px;
+}
+
+div.gallery div.video a.watch img,
+div.gallery div.video div.text {
+	opacity:0.7
+}
+
+div.gallery div.video:hover a.watch img,
+div.gallery div.video:hover div.text {
+	opacity:1
 }
 
 div.gallery div.video a.watch,div.gallery div.video a.watch img {
@@ -319,11 +352,6 @@ div.gallery div.video.film a.watch img {
 	width:106px
 }
 
-div.gallery div.video:hover {
-	filter:alpha(opacity=100);
-	opacity:1
-}
-
 div.pageheader {
 	display:none;
 	font-size:30pt;
@@ -371,9 +399,13 @@ div#header div.headerbuttons a.active {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2f2f', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
 }
 
-div#welcome {
-	padding-top: 10px;
-	height: 290px;
-	width: 400px;
-	margin: 0 auto
+ul.slider li img {
+	height:330px;
+	margin: 0 auto;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px
 }

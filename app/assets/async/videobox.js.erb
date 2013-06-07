@@ -30,18 +30,16 @@ VideoBox = (function(){
       videoHTML.find("#title").html(video.title);
       videoHTML.find("#description").html(video.description);
       videoHTML.find("#synopsis").html(video.synopsis);
+      videoHTML.css("display", "none");
       $(video.anchor).append(videoHTML);
-      $(".videodetails_tooltip").offset({
-        left: window.mouse.x + 10,
-        top: window.mouse.y - videoHTML.height()
-      }); 
-      if ( window.mouse.x + 10 + videoHTML.width() > window.screen.availWidth ) {
-        $(".videodetails_tooltip").offset({
-          left: window.mouse.x - videoHTML.width() - 10,
-          top: window.mouse.y - videoHTML.height()
-        });
-      }           
+      videoHTML.fadeIn("slow");
+      var offset = {left: window.mouse.x + 10, top: window.mouse.y - videoHTML.height()};
       window.mouse = undefined;
+      if ( offset.left + videoHTML.width() > window.screen.availWidth ) { // Out of bounds LEFT
+        offset.left -= (videoHTML.width() + 10);
+      }
+
+      $(".videodetails_tooltip").offset(offset);
     },
     RemoveDetails: function() {
       $(".videodetails_tooltip").remove();
