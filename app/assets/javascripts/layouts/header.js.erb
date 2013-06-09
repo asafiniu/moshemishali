@@ -1,7 +1,13 @@
 $(document).ready(function(e){
 	attachEvents();
-	$("body").addClass(getClientName());
-	$(".section").height(parseInt(window.screen.availHeight*0.85 - ($("#header").height() + $("#footer").height())));
+	var client = getClientName();
+	var sectionHeight = parseInt(window.screen.availHeight*0.85 - ($("#header").height() + $("#footer").height()));
+	$("body").addClass(client);
+	if (client.match("mobile")) {
+		sectionHeight = $("#main").height();
+	}
+
+	$(".section").height(sectionHeight);
 	loadSlider();
 });
 loadSlider = function() {
