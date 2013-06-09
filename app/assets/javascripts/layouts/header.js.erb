@@ -4,7 +4,7 @@ $(document).ready(function(e){
 	var sectionHeight = parseInt(window.screen.availHeight * 0.85 - ($("#header").height() + $("#footer").height()));
 	$("body").addClass(client);
 	if (client.match("mobile")) {
-		sectionHeight = $("#main").height();
+		sectionHeight = window.screen.availHeight || window.innerHeight || document.body.clientHeight;
 	}
 
 	$(".section").height(sectionHeight);
