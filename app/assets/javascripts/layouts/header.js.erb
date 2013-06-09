@@ -1,7 +1,7 @@
 $(document).ready(function(e){
 	attachEvents();
 	var client = getClientName();
-	var sectionHeight = parseInt(window.screen.availHeight*0.85 - ($("#header").height() + $("#footer").height()));
+	var sectionHeight = parseInt(window.screen.availHeight * 0.85 - ($("#header").height() + $("#footer").height()));
 	$("body").addClass(client);
 	if (client.match("mobile")) {
 		sectionHeight = $("#main").height();
@@ -17,12 +17,14 @@ loadSlider = function() {
 	}
 	else {
 		window.slider = $(".slider").bxSlider({
+			mode: "fade",
 			autoStart: true,
 			pager: false,
 			controls: false,
 			randomStart: true,
 			infiniteLoop: true,
-			speed: 300,
+			pause: 2000,
+			speed: 1000,
 			easing: "ease-in-out",
 			touchEnabled: true,
 			auto: true
