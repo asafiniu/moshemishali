@@ -11,8 +11,6 @@ VideoBox = (function(){
   return {
     Show: function(video) {
       var videoHTML = $("<%= escape_javascript(render :partial => 'videos/videodetails') %>");
-      // videoHTML.find("#title").html(video.title);
-      // videoHTML.find("#description").html(video.description);
       videoHTML.find("#title,#description").remove();
       videoHTML.find(".vidout").prepend(_iframeWrap(video.vidlink));
 
@@ -37,6 +35,9 @@ VideoBox = (function(){
       window.mouse = undefined;
       if ( offset.left + videoHTML.width() > window.screen.availWidth ) { // Out of bounds LEFT
         offset.left -= (videoHTML.width() + 10);
+      }
+      if ( offset.top < 0 ) { // Out of bounds TOP
+        offset.top = 0;
       }
 
       $(".videodetails_tooltip").offset(offset);

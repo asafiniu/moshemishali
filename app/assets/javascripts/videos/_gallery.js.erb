@@ -33,5 +33,5 @@ attachVideoEvents = function() {
 };
 watchFromPhoto = function(section, videoTitle) {
 	$(".headerbuttons a[goto='"+section+"']").trigger("click");
-	$("div.video[title^='" + videoTitle.split(" ").first() +"'] a.watch").trigger("click");	
+	$("div.video[data-title^='" + videoTitle.split(" ").first() +"'] a.watch").trigger("click");	
 };
