@@ -20,14 +20,14 @@
     <% if video.description and video.description.size > 40 %>
     <%= video.description.to_s[0..40] + "..." %>
     <% else %>
-    <%= video.description %>
+    <%= video.description.to_s %>
     <% end %>
   </td>
   <td>
     <% if video.synopsis and video.synopsis.size > 40 %>
     <%= video.synopsis.to_s[0..40] + "..." %>
     <% else %>
-    <%= video.synopsis %>
+    <%= video.synopsis.to_s %>
     <% end %>
   </td>
   <td>
