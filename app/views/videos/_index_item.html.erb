@@ -41,7 +41,8 @@
 <tr class="data_edit" id="<%= video.id %>">
   <%= form_for(video, :remote => true) do |f| %>
   <td class="field">
-    <%= video.typename.capitalize %>
+    <%= f.label :typename %><br>
+    <%= f.text_field :typename %>
   </td>
   <td class="field">
     <%= f.label :image_url %><br>
