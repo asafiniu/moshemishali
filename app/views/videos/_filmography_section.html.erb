@@ -1,6 +1,6 @@
 <div class="sectionheader"><%= title %></div>
 <ul>
-	<% Video.by_type(type).each do |f| %>
+	<% Video.by_type(type).reverse.each do |f| %>
 	<li>
 		<span><%= f.title.gsub("&#150;", "-") %></span> 
 		<%= f.description.gsub("&#150;", "-") %>

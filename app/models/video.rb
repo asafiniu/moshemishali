@@ -11,7 +11,7 @@ class Video < ActiveRecord::Base
 	end
 
 	def self.by_type(typename)
-		Video.find_all_by_typename(typename).sort_by{|v| v.created_at}.reverse
+		Video.find_all_by_typename(typename).sort_by{|v| v.created_at}
 	end
 
 	def self.create_all
